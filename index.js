@@ -11,6 +11,12 @@ const io = new Server(server);//socket.io
 const Discord = require('discord.js');
 const client = new Discord.Client();
 //discord
+function getRnd(ind){
+let a = "";
+    for (var i = ind; i < 20; i++) {
+      var n = abc[crypto.randomInt(0, abc.length - 1)];
+      a += n;
+    }}
 app.get('/', (req, res) => {
   res.send('<h1>Hello world</h1>');
 });
@@ -22,14 +28,11 @@ client.on('guildCreate', (guild) => {
   channel.send('Hi @everyone, I\'m **mirrorme**. *Currently under development*');
 });
 client.on('message', message => {
+
   if (message.content === '!start-mirror') {
     message.channel.send('Theoretically started mirroring…');
-    var a = "";
-    for (var i = 0; i < 20; i++) {
-      var n = abc[crypto.randomInt(0, abc.length - 1)];
-      a += n;
-    }
-    message.channel.send('Your random id:' + a);
+    let a=getRnd(20)
+    message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' + a + '||');
   }
 });
 server.listen(3000, () => {
