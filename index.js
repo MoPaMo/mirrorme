@@ -34,6 +34,9 @@ client.on('message', message => {
     let a=getRnd(20)
     message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' + a + '||');
   }
+  else{
+    message.react(":mirror:")
+  }
 });
 server.listen(3000, () => {
   console.log('listening on *:3000');
