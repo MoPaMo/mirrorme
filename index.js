@@ -36,8 +36,9 @@ client.on('message', message => {
     message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' + a + '||. Others are now able to watch your chat through this link. Type `!stop-mirror` to prevent that');
   }
   else{
-message.react('😄');  }
+message.react('👁');  }
 });
+
 server.listen(3000, () => {
   console.log('listening on *:3000');
 });
