@@ -12,8 +12,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 //discord
 function getRnd(ind){
-let a = "";
-    for (var i = ind; i < 20; i++) {
+var a = "";
+    for (var i = 0; i < ind; i++) {
       var n = abc[crypto.randomInt(0, abc.length - 1)];
       a += n;
     }
