@@ -21,6 +21,9 @@ var a = "";
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/views/start.html`);
 });
+app.get('/tos', (req, res) => {
+  res.sendFile(`${__dirname}/views/code_of_conduct.html`);
+});
 app.get('/finish', (req, res) => {
   res.sendFile(`${__dirname}/views/start.html`);
 });
