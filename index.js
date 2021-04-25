@@ -18,9 +18,7 @@ var a = "";
       a += n;
     }
     return a}
-    app.use(function (req,res,next){
-	res.status(404).send('Unable to find the requested resource!');
-});
+
 app.use(function (req,res,next){
 	res.status(404).sendFile(`${__dirname}/views/start.html`);
 });
