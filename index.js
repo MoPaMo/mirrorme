@@ -19,7 +19,10 @@ var a = "";
     }
     return a}
 app.get('/', (req, res) => {
-  res.send('<h1>Hello world</h1>');
+  res.sendFile(`${__dirname}/views/start.html`);
+});
+app.get('/finish', (req, res) => {
+  res.sendFile(`${__dirname}/views/start.html`);
 });
 client.once('ready', () => {
   console.log('Ready!');
@@ -33,7 +36,11 @@ client.on('message', message => {
   if (message.content === '!start-mirror') {
     message.channel.send('Theoretically started mirroring…');
     let a=getRnd(20)
-    message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' + a + '||. Others are now able to watch your chat through this link. Type `!stop-mirror` to prevent that');
+    message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' +message.guild.id+"/"+ a + '||. Others are now able to watch your chat through this link. Type `!stop-mirror` to prevent that');
+  }
+  else 
+  if (message.content === '!start-mirror') {
+  //message.
   }
   else{
 message.react('👁');  }
