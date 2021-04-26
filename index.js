@@ -19,9 +19,7 @@ var a = "";
     }
     return a}
 
-app.use(function (req,res,next){
-	res.status(404).sendFile(`${__dirname}/views/start.html`);
-});
+
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/views/start.html`);
 });
@@ -29,7 +27,7 @@ app.get('/tos', (req, res) => {
   res.sendFile(`${__dirname}/views/code_of_conduct.html`);
 });
 app.get('/finish', (req, res) => {
-  res.sendFile(`${__dirname}/views/start.html`);
+  res.sendFile(`${__dirname}/views/finish.html`);
 });
 client.once('ready', () => {
   console.log('Ready!');
@@ -56,5 +54,7 @@ message.react('👁');  }
 server.listen(3000, () => {
   console.log('listening on *:3000');
 });
-
+app.use(function (req,res,next){
+	res.status(404).sendFile(`${__dirname}/views/start.html`);
+});
 client.login(process.env['dctoken']);
