@@ -10,6 +10,9 @@ const io = new Server(server);//socket.io
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const Database = require("@replit/database")
+const db = new Database()
+
 //discord
 function getRnd(ind){
 var a = "";
@@ -19,7 +22,7 @@ var a = "";
     }
     return a}
 
-
+app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/views/start.html`);
 });
@@ -42,13 +45,23 @@ client.on('message', message => {
     message.channel.send('Theoretically started mirroring…');
     let a=getRnd(20)
     message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' +message.guild.id+"/"+ a + '||. Others are now able to watch your chat through this link. Type `!stop-mirror` to prevent that');
+    db.set(message.guild.id, {pwd:a, channel:message.channel.id, created:new Date(), name:message.author.id})
   }
   else 
-  if (message.content === '!start-mirror') {
-  //message.
+  if (message.content === '!info-mirror') {
+  db.get(message.guild.id).then((val)=>{
+    message.channel.send(`Created at ${val.created} by <@${val.name}>`)
+  })
   }
+  else 
+  if (message.content === '!stop-mirror') {
+  db.get(message.guild.id).then((val)=>{
+    message.channel.send("Created at "+val.created)
+  })
+  }
+
   else{
-message.react('👁');  }
+    message.react('👁');  }
 });
 
 server.listen(3000, () => {
