@@ -6,10 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>You did it! | mirrorme | a discord bot</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-  <link rel="stylesheet" href="/icons.css">
+	<link rel="stylesheet" href="/icons.css">
+<link rel="icon" type="image/svg+xml" href="/ico.svg">
+<link rel="alternate icon" href="/fav.ico">
+<link rel="mask-icon" href="/ico.svg" color="#000">
 
-
-	</script>
 </head>
 
 <body>
@@ -60,25 +61,36 @@
   <h3>What's next?</h3><br/>
 <div class="columns">
   <div class="column">
-  <span class="icon-text">
-  <span class="icon">
-    <i class="icon-book"></i>
-  </span>
-  <span class="has-text-weight-semibold	">Read the docs</span>
-</span>
+
+<h5 class="has-text-weight-semibold">
+    <span class="icon">
+  <i class="icon-book"></i>
+</span> Read the docs</h5>
 
 <p class="block">
   <a href="/docs">Check out the docs here</a> and get to know your new bot!
 </p>
   </div>
-  <div class="column">
-    Second column
+  <div class="column is-clickable" onclick="share()">
+    <h5 class="has-text-weight-semibold">
+    <span class="icon">
+  <i class="icon-share-alt-square"></i>
+</span> Share mirrorme</h5>
+Find mirrorme great? Click here to share it with your firends!
   </div>
   <div class="column">
-    Third column
+    <h5 class="has-text-weight-semibold">
+    <span class="icon">
+  <i class="icon-file-code-o"></i>
+</span>Check out the code</h5>
+mirrorme is 100% open source (MIT), so if you are interested in coding, you might want to check out our <a href="https://github.com/MoPaMo/mirrorme">github repo</a>!
   </div>
   <div class="column">
-    Fourth column
+    <h5 class="has-text-weight-semibold">
+    <span class="icon">
+  <i class="icon-code-fork"></i>
+</span> Contribute</h5>
+Miss a feature? Found a bug? <a href="https://github.com/MoPaMo/mirrorme/issues">Open an issue </a> or <a href="https://github.com/MoPaMo/mirrorme/">make a pr</a>!
   </div>
 </div>
 </section>
@@ -107,6 +119,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-});</script>
+});
+
+const share=function(){
+if (navigator.share) {
+  navigator.share({
+    title: 'mirrorme discord bot',
+    text: 'Check out mirrorme, a free and open source discord bot!',
+    url: 'https://mirror.mopamo.repl.co/',
+  })
+    .then(() => console.log('Successful share'))
+    .catch((error) => open("mailto:?subject=Check%20out%20mirrorme!&body=Mirrorme%20is%20a%20free%20and%20open%20source%20discord%20bot%20to%20mirror%20your%20server%20to%20the%20web%2C%20I%20already%20added%20it%20to%20my%20server%20myself!%20%0ACheck%20it%20out%3A%20https%3A%2F%2Fmirror.mopamo.repl.co%2F", "_blank"));
+}
+}</script>
   </body>
 </html>

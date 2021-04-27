@@ -49,6 +49,7 @@ client.on('message', message => {
   }
   else 
   if (message.content === '!info-mirror') {
+    
   db.get(message.guild.id).then((val)=>{
     message.channel.send(`Created at ${val.created} by <@${val.name}>`)
   })
@@ -57,6 +58,10 @@ client.on('message', message => {
   if (message.content === '!stop-mirror') {
   db.get(message.guild.id).then((val)=>{
     message.channel.send("Created at "+val.created)
+    
+db.delete(message.guild.id).then(() => {
+  message.channel.send("We've deleted your data and stopped mirroring")
+});
   })
   }
 
