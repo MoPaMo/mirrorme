@@ -45,51 +45,25 @@
           </div>
         </nav>
         <br/><br/><br/>
-	<section class="section">
-		<div class="container">
- 
-			<h1 class="title">
-				mirrorme
-			</h1>
-			<p class="subtitle">
-				A discord bot to mirror all the messages of your server to the <strong>web</strong>!
-      </p>
-    </div>
-  </section>
-  
-    <section class="hero is-primary">
+<section class="hero is-danger">
   <div class="hero-body">
-    <h3 class="title">
-     Add mirrorme now!
-    </h3>
+    <p class="title">
+      404 Not Found
+    </p>
     <p class="subtitle">
-      <a href="https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=2147900481&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish" class="button is-primary is-light is-medium">
-    Click here!
-</a>
-
+      We couldn't find the page you were looking for… <br/><a href="/" class="has-text-light">&rarr;Click here to get home</a>
     </p>
   </div>
+</section> 
+<section class="section">
+  <form class="control has-icons-left" action="https://ecosia.org/search" method="GET" id="form"> 
+    <input class="input" type="text" placeholder="Search mirrorme pages…" name="q" id="searchtool" required>
+    <span class="icon is-small is-left">
+      <i class="icon-github"></i>
+    </span>
+  </form>
 </section>
-<div class="card">
-          <header class="card-header">
-            <p class="card-header-title">Most recent commits</p>
-            <a class="card-header-icon" href="https://github.com/MoPaMo/mirrorme" aria-label="open GitHub">
-              <span class="icon">
-                <i class="icon-github" aria-hidden="true"></i>
-              </span>
-            </a>
-          </header>
-          <div class="card-content">
-            <div class="content">
-              <div class="columns" id="col">
-                <div class="column "><div class="notification"><button class="button is-loading">Loading</button></div></div>
-                <div class="column "><div class="notification"><button class="button is-loading">Loading</button></div></div>
-                <div class="column "><div class="notification"><button class="button is-loading">Loading</button></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <footer class="footer">
+ <footer class="footer">
   <div class="content has-text-centered">
     <p>
       <strong>mirrorme</strong> by <a href="https://mopamo.github.io">MoPaMo</a>. The source code is licensed
@@ -112,7 +86,7 @@
 
 </div>
   </div>
-</footer>
+</footer>     
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -138,6 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+});
+
+
+document.getElementById("form").addEventListener("submit", function(event){
+  //event.preventDefault()
+  document.getElementById('searchtool').value ='site:mirror.mopamo.repl.co '+document.getElementById('searchtool').value
 });</script>
   </body>
 </html>
