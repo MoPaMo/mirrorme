@@ -32,6 +32,9 @@ app.get('/tos', (req, res) => {
 app.get('/finish', (req, res) => {
   res.sendFile(`${__dirname}/views/finish.html`);
 });
+app.get('/license', (req, res) => {
+  res.sendFile(`${__dirname}/views/license.html`);
+});
 client.once('ready', () => {
   console.log('Ready!');
 });
