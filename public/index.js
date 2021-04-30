@@ -39,10 +39,10 @@ fetch("https://api.github.com/users/MoPaMo/events", {
           <h5 class=" is-size-7 has-text-weight-bold">
           <span class="icon">
             <i class="icon icon-book"></i>
-          </span> ${data[i].repo.name}Read the docs
+          </span> ${data[i].repo.name}
         </h5>
-        <span class="is-size-7 icon-texthas-text-weight-light"><span class="icon">
-        <i class="fas fa-clock"></i>
+        <span class="is-size-7 has-text-weight-light"><span class="icon">
+        <i class="icon-time"></i>
       </span>${data[i].created_at ? getD(data[i].created_at) : "no date provided :("
           }</span><br/><div class="is-size-6 is-size-5-widescreen">${b.message
           }</div>`;
