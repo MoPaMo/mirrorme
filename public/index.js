@@ -24,34 +24,32 @@ const getD = (previous) => {
 };
 
 fetch("https://api.github.com/users/MoPaMo/events", {
-    method: "get",
-  })
-    .then((response) => response.json())
-    .then((jsonData) => {
-      // console.log(jsonData);
-      let data = jsonData.filter((a) => a.type == "PushEvent");
-      let parent = document.getElementById("col"); //.innerHTML=data
-      console.log(data);
-      for (let i = 0; i < 3; i++) {
-        let b = data[i].payload.commits[0],
-          c = parent.children[i].children[0],
-          a = `<span class="icon-text is-size-7 has-text-weight-bold">
+  method: "get",
+})
+  .then((response) => response.json())
+  .then((jsonData) => {
+    // console.log(jsonData);
+    let data = jsonData.filter((a) => a.type == "PushEvent");
+    let parent = document.getElementById("col"); //.innerHTML=data
+    console.log(data);
+    for (let i = 0; i < 3; i++) {
+      let b = data[i].payload.commits[0],
+        c = parent.children[i].children[0],
+        a = `
+          <h5 class=" is-size-7 has-text-weight-bold">
           <span class="icon">
-            <i class="fas fa-book"></i>
-          </span>
-          
-          <span>${data[i].repo.name}</span>
-        </span><span class="is-size-7 icon-texthas-text-weight-light"><span class="icon">
+            <i class="icon icon-book"></i>
+          </span> ${data[i].repo.name}Read the docs
+        </h5>
+        <span class="is-size-7 icon-texthas-text-weight-light"><span class="icon">
         <i class="fas fa-clock"></i>
-      </span>${
-        data[i].created_at ? getD(data[i].created_at) : "no date provided :("
-      }</span><br/><div class="is-size-6 is-size-5-widescreen">${
-            b.message
+      </span>${data[i].created_at ? getD(data[i].created_at) : "no date provided :("
+          }</span><br/><div class="is-size-6 is-size-5-widescreen">${b.message
           }</div>`;
-        console.log(a);
-        c.innerHTML = a.toString();
-      }
-    })
-    .catch((err) => {
-      //error block
-    });
+      console.log(a);
+      c.innerHTML = a.toString();
+    }
+  })
+  .catch((err) => {
+    //error block
+  });
