@@ -44,6 +44,8 @@ client.on('guildCreate', (guild) => {
 });
 client.on('message', message => {
 
+  if(message.channel.type !== 'dm'){
+
   if (message.content === '!start-mirror') {
     message.channel.send('Theoretically started mirroring…');
     let a=getRnd(20)
@@ -69,7 +71,11 @@ db.delete(message.guild.id).then(() => {
   }
 
   else{
-    message.react('👁');  }
+    message.react('👁');  }}else{
+//DM
+if(!message.author.bot){
+message.reply("I'm afraid mirrorme is only working on servers! You can add mirrorme to a server here: https://mirror.mopamo.repl.co")}
+    }
 });
 
 server.listen(3000, () => {
