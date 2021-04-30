@@ -14,13 +14,14 @@ const Database = require("@replit/database")
 const db = new Database()
 
 //discord
-function getRnd(ind){
-var a = "";
-    for (var i = 0; i < ind; i++) {
-      var n = abc[crypto.randomInt(0, abc.length - 1)];
-      a += n;
-    }
-    return a}
+function getRnd(ind) {
+  var a = "";
+  for (var i = 0; i < ind; i++) {
+    var n = abc[crypto.randomInt(0, abc.length - 1)];
+    a += n;
+  }
+  return a
+}
 
 app.use(express.static('public'));
 app.get('/', (req, res) => {
@@ -44,44 +45,47 @@ client.on('guildCreate', (guild) => {
 });
 client.on('message', message => {
 
-  if(message.channel.type !== 'dm'){
+  if (message.channel.type !== 'dm') {
 
-  if (message.content === '!start-mirror') {
-    message.channel.send('Theoretically started mirroring…');
-    let a=getRnd(20)
-    message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' +message.guild.id+"/"+ a + '||. Others are now able to watch your chat through this link. Type `!stop-mirror` to prevent that');
-    db.set(message.guild.id, {pwd:a, channel:message.channel.id, created:new Date(), name:message.author.id})
-  }
-  else 
-  if (message.content === '!info-mirror') {
-    
-  db.get(message.guild.id).then((val)=>{
-    message.channel.send(`Created at ${val.created} by <@${val.name}>`)
-  })
-  }
-  else 
-  if (message.content === '!stop-mirror') {
-  db.get(message.guild.id).then((val)=>{
-    message.channel.send("Created at "+val.created)
-    
-db.delete(message.guild.id).then(() => {
-  message.channel.send("We've deleted your data and stopped mirroring")
-});
-  })
-  }
-
-  else{
-    message.react('👁');  }}else{
-//DM
-if(!message.author.bot){
-message.reply("I'm afraid mirrorme is only working on servers! You can add mirrorme to a server here: https://mirror.mopamo.repl.co")}
+    if (message.content === '!start-mirror') {
+      message.channel.send('Theoretically started mirroring…');
+      let a = getRnd(20)
+      message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' + message.guild.id + "/" + a + '||. Others are now able to watch your chat through this link. Type `!stop-mirror` to prevent that');
+      db.set(message.guild.id, { pwd: a, channel: message.channel.id, created: new Date(), name: message.author.id })
     }
+    else
+      if (message.content === '!info-mirror') {
+
+        db.get(message.guild.id).then((val) => {
+          message.channel.send(`Created at ${val.created} by <@${val.name}>`)
+        })
+      }
+      else
+        if (message.content === '!stop-mirror') {
+          db.get(message.guild.id).then((val) => {
+            message.channel.send("Created at " + val.created)
+
+            db.delete(message.guild.id).then(() => {
+              message.channel.send("We've deleted your data and stopped mirroring")
+            });
+          })
+        }
+
+        else {
+          message.react('👁');
+        }
+  } else {
+    //DM
+    if (!message.author.bot) {
+      message.reply("I'm afraid mirrorme is only working on servers! You can add mirrorme to a server here: https://mirror.mopamo.repl.co")
+    }
+  }
 });
 
 server.listen(3000, () => {
   console.log('listening on *:3000');
 });
-app.use(function (req,res,next){
-	res.status(404).sendFile(`${__dirname}/views/404.html`);
+app.use(function (req, res, next) {
+  res.status(404).sendFile(`${__dirname}/views/404.html`);
 });
 client.login(process.env['dctoken']);
