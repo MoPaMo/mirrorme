@@ -56,8 +56,9 @@ body {
     grid-template-columns: 2.5rem auto ;
 
 }
-.message .text .msg-info .msg-author{
-    
+.message .text .msg-info .msg-date{
+    color:gray;
+    font-size: 0.75rem;
 }
 .message .prof-image img {
   transition-duration: 0.5s;
