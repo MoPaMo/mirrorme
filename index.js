@@ -36,6 +36,9 @@ app.get('/finish', (req, res) => {
 app.get('/license', (req, res) => {
   res.sendFile(`${__dirname}/views/license.html`);
 });
+app.get('/app', (req, res) => {
+  res.sendFile(`${__dirname}/views/app.html`);
+});
 client.once('ready', () => {
   console.log('Ready!');
 });
