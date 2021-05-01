@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /c/
+
+Sitemap:https://mirror.mopamo.repl.co/sitemap.xml
