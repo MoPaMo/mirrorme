@@ -47,21 +47,24 @@ client.on('message', message => {
 
   if (message.channel.type !== 'dm') {
 
-    if (message.content === '!start-mirror') {
+    if (message.content === '!m-start') {
       message.channel.send('Theoretically started mirroring…');
       let a = getRnd(20)
-      message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' + message.guild.id + "/" + a + '||. Others are now able to watch your chat through this link. Type `!stop-mirror` to prevent that');
+      message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' + message.guild.id + "/" + a + '||. Others are now able to watch your chat through this link. Type `!m-stop` to prevent that');
       db.set(message.guild.id, { pwd: a, channel: message.channel.id, created: new Date(), name: message.author.id })
     }
+    else if (message.content==="!m-ping"){
+      message.channel.send("I'm online! You can view my status here: https://stats.uptimerobot.com/BErLNFVkyE")
+    }
     else
-      if (message.content === '!info-mirror') {
+      if (message.content === '!m-info') {
 
         db.get(message.guild.id).then((val) => {
           message.channel.send(`Created at ${val.created} by <@${val.name}>`)
         })
       }
       else
-        if (message.content === '!stop-mirror') {
+        if (message.content === '!m-stop') {
           db.get(message.guild.id).then((val) => {
             message.channel.send("Created at " + val.created)
 
