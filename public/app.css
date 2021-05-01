@@ -1,6 +1,7 @@
 #chat {
   background-color: #2f3236;
   color: #ffffff;
+  padding: 1vw;
 }
 html,
 body {
@@ -17,8 +18,10 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
 #aside {
   background-color: #232629;
+  padding: 1vw;
 }
 #writebar {
   text-align: center;
@@ -46,4 +49,22 @@ body {
   border: 0px solid black;
   border-radius: 0.55rem;
   outline: none;
+}
+.message {
+    display:grid;
+    grid-gap: 1vw;
+    grid-template-columns: 2.5rem auto ;
+
+}
+.message .text .msg-info .msg-author{
+    
+}
+.message .prof-image img {
+  transition-duration: 0.5s;
+  max-width: 2.5rem;
+  border-radius: 2.5rem;
+  cursor: pointer;
+}
+.message .prof-image img:hover {
+  border-radius: 0.5rem;
 }
