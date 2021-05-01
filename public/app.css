@@ -27,7 +27,7 @@ body {
 }
 
 #writebar > input {
-    transition-duration: 0.5s;
+  transition-duration: 0.5s;
   background-color: #40434a;
   color: white;
   display: inline-block;
@@ -39,11 +39,11 @@ body {
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif !important;
-    outline: none;
+  outline: none;
 }
-#writebar > input:focus,#writebar > input:hover {
-    border: 0px solid black;
-    border-radius: 0.55rem;
-    outline: none;
-
+#writebar > input:focus,
+#writebar > input:hover {
+  border: 0px solid black;
+  border-radius: 0.55rem;
+  outline: none;
 }
