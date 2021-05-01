@@ -1,3 +1,11 @@
+@font-face{
+    font-family: 'Source Sans 3';
+    font-weight: 200;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('https://cdn.jsdelivr.net/npm/source-sans@3.28.0/WOFF2/TTF/SourceSans3-ExtraLightIt.ttf.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/npm/source-sans@3.28.0/WOFF/OTF/SourceSans3-ExtraLightIt.otf.woff') format('woff');
+}
 #chat {
   background-color: #2f3236;
   color: #ffffff;
@@ -8,9 +16,10 @@ body {
   color: #ffffff;
   margin: 0px;
   padding: 0px;
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen",
+  /*font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif !important;
+    "Helvetica", "Arial", sans-serif !important;*/
+    font-family: 'Source Sans 3';
   display: grid;
   grid-template-columns: auto 10vw;
   grid-template-rows: auto 7.5vh;
@@ -35,10 +44,12 @@ body {
   font-size: 1.2rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  border: 0px solid black;
+  border: 0px solid black;/*
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif !important;
+    "Helvetica", "Arial", sans-serif !important;*/
+    font-family: 'Source Sans 3';
+
     outline: none;
 }
 #writebar > input:focus,#writebar > input:hover {
