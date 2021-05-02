@@ -12,10 +12,11 @@
   </head>
 
   <body id="main">
+    <div id="loadscreen" v-if="loading">LOADING...</div>
     <!--chat app-->
     <main id="chat">
       <div class="message" v-for="msg in msgs">
-        <a class="prof-image" href="https://discordapp.com/users/718741949498261596"><img src="https://picsum.photos/200" alt="User's profile picture. Click to open discord (only works with friends)" ></a>
+        <a class="prof-image" href="https://discordapp.com/users/718741949498261596"><img src="https://picsum.photos/200" :alt="msg.author+'\'s profile picture. Click to open discord (works only with friends)'" ></a>
         <div class="text">
           <div class="msg-info">
             <span class="msg-author">{{msg.author}} </span
