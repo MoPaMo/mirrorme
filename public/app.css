@@ -24,9 +24,9 @@ body {
   left:0px;
   width:100vw;
   height:100vh;
-  padding:20vw;
   overflow:clip;
   background-color:#2f3236;
+  text-align:center
 }
 #aside {
   background-color: #232629;

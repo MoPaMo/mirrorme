@@ -12,9 +12,9 @@
   </head>
 
   <body id="main">
-    <div id="loadscreen" v-if="loading">LOADING...</div>
+    <div id="loadscreen" v-if="loading"><br>LOADING...</div>
     <!--chat app-->
-    <main id="chat">
+    <main id="chat" v-if="!loading">
       <div class="message" v-for="msg in msgs">
         <a class="prof-image" href="https://discordapp.com/users/718741949498261596"><img src="https://picsum.photos/200" :alt="msg.author+'\'s profile picture. Click to open discord (works only with friends)'" ></a>
         <div class="text">
@@ -27,9 +27,9 @@
       </div>
     </main>
     <!-- /chat app-->
-    <aside id="aside">Hi</aside>
-    <section id="writebar"><input /></section>
-    <section>share mirrorme</section>
+    <aside id="aside"  v-if="!loading">Hi</aside>
+    <section id="writebar"  v-if="!loading"><input /></section>
+    <section  v-if="!loading">share mirrorme</section>
     <script src="/public/vue.global.js"></script>
     <script src="/public/app.js"></script>
   </body>
