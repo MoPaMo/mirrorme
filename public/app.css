@@ -72,6 +72,10 @@ body {
 .message .text .msg-info .msg-author{
   color:#fff;
   font-weight: bolder;
+  text-decoration: none;
+}
+.message .text .msg-info .msg-author:hover, .message .text .msg-info .msg-author:focus .message .text .msg-info .msg-author:active {
+text-decoration: underline;
 }
 .message .prof-image img {
   transition-duration: 0.5s;

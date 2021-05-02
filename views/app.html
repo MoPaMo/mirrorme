@@ -19,7 +19,7 @@
         <a class="prof-image" target="_blank" :href="'https://discordapp.com/users/'+msg.id"><img :src="msg.img" :alt="msg.author+'\'s profile picture. Click to open discord (works only with friends)'" ></a>
         <div class="text">
           <div class="msg-info">
-            <span class="msg-author">{{msg.author}} </span
+            <a class="msg-author" :href="'https://discordapp.com/users/'+msg.id" rel="_blank">{{msg.author}} </a
             > <span class="msg-date"> {{msg.date}}</span>
           </div>
           <div class="msg-text">{{msg.text}}</div>
