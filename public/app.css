@@ -60,6 +60,10 @@ body {
     color:gray;
     font-size: 0.75rem;
 }
+.message .text .msg-info .msg-author{
+  color:#fff;
+  font-weight: bolder;
+}
 .message .prof-image img {
   transition-duration: 0.5s;
   max-width: 2.5rem;
