@@ -76,6 +76,7 @@ body {
 .message .prof-image img {
   transition-duration: 0.5s;
   max-width: 2.5rem;
+  max-height: 2.5rem;
   border-radius: 2.5rem;
   cursor: pointer;
 }
