@@ -27,6 +27,15 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/views/start.html`);
 });
+app.get('/public/app.css', (req, res) => {
+  res.sendFile(`${__dirname}/public/app.css`);
+});
+app.get('/public/app.js', (req, res) => {
+  res.sendFile(`${__dirname}/public/app.js`);
+});
+app.get('/public/vue.global.js', (req, res) => {
+  res.sendFile(`${__dirname}/public/vue.global.js`);
+});
 app.get('/tos', (req, res) => {
   res.sendFile(`${__dirname}/views/code_of_conduct.html`);
 });
@@ -48,7 +57,7 @@ client.on('guildCreate', (guild) => {
 });
 client.on('message', message => {
 
-  if (message.channel.type !== 'dm') {
+  if (message.channel.type !== 'dm'&&!message.author.bot) {
 
     if (message.content === '!m-start') {
       message.channel.send('Theoretically started mirroring…');
@@ -79,6 +88,7 @@ client.on('message', message => {
 
         else {
           message.react('👁');
+          console.log(message.author.avatarURL())
         }
   } else {
     //DM
