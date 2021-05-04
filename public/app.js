@@ -1,6 +1,7 @@
 let vm = Vue.createApp({
   data() {
     return {
+      
       msgs: [
         {
           author: "Cicero",
@@ -36,9 +37,16 @@ let vm = Vue.createApp({
         },
       ],
       loading: true,
+      load_reason:"Starting app…"
     };
   },
   mounted() {
-    this.loading = false;
+    var socket = io();
+    this.load_reason="Establishing a connection…"
+    socket.on('connect', (socket) => {
+  console.log('a user connected');
+  this.loading = false;
+});
+    
   },
 }).mount("#main");

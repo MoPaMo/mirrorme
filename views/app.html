@@ -13,7 +13,7 @@
   </head>
 
   <body id="main">
-    <div id="loadscreen" v-if="loading"><br />LOADING...</div>
+    <div id="loadscreen" v-if="loading"><br />LOADING...<br/>{{load_reason}}</div>
     <!--chat app-->
     <main id="chat" v-if="!loading">
       <div class="message" v-for="msg in msgs">
@@ -46,6 +46,7 @@
     <section id="writebar" v-if="!loading"><input /></section>
     <section v-if="!loading">share mirrorme</section>
     <script src="/public/vue.global.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="/public/app.js"></script>
   </body>
 </html>
