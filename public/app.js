@@ -41,12 +41,17 @@ let vm = Vue.createApp({
     };
   },
   mounted() {
-    var socket = io();
+    
     this.load_reason="Establishing a connection…";
+
+    
+  },
+}).mount("#main");
+var socket = io();
     socket.on('connect', (socket) => {
   console.log('connected to server');
   this.loading = false;
 });
-    
-  },
-}).mount("#main");
+socket.on("error", (msg)=>{
+  open("/error", "_self")
+})
