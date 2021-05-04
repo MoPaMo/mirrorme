@@ -22,7 +22,7 @@ function getRnd(ind) {
   }
   return a
 }
-
+// <express>
 app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/views/start.html`);
@@ -48,6 +48,10 @@ app.get('/license', (req, res) => {
 app.get('/c/:server/:pwd', (req, res) => {
   res.sendFile(`${__dirname}/views/app.html`);
 });
+
+// </express>
+
+// <discordJS>
 client.once('ready', () => {
   console.log('Ready!');
 });
@@ -97,7 +101,7 @@ client.on('message', message => {
     }
   }
 });
-
+// </discordJS>
 server.listen(3000, () => {
   console.log('listening on *:3000');
 });
