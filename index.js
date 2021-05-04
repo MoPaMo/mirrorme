@@ -54,9 +54,11 @@ app.get('/c/:server/:pwd', (req, res) => {
 // <socketIO>
 
 io.on('connection', (socket)=>{
-  console.log("New connection:")
-  console.log(socket)
+  
+  let url=socket.handshake.headers.referer
+
 })
+
 // </socketIO>
 
 // <discordJS>
@@ -74,7 +76,7 @@ client.on('message', message => {
     if (message.content === '!m-start') {
       message.channel.send('Theoretically started mirroring…');
       let a = getRnd(20)
-      message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' + message.guild.id + "/" + a + '||. Others are now able to watch your chat through this link. Type `!m-stop` to prevent that');
+      message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' + message.guild.id + "/" + a + ' || . Others are now able to watch your chat through this link. Type `!m-stop` to prevent that');
       db.set(message.guild.id, { pwd: a, channel: message.channel.id, created: new Date(), name: message.author.id })
     }
     else if (message.content==="!m-ping"){
