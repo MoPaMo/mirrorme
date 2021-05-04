@@ -23,6 +23,7 @@
           ><img
             :src="msg.img"
             :alt="msg.author+'\'s profile picture. Click to open discord (works only with friends)'"
+            title="Click to open discord (works only with friends)"
         /></a>
         <div class="text">
           <div class="msg-info">
@@ -30,6 +31,7 @@
               class="msg-author"
               :href="'https://discordapp.com/users/'+msg.id"
               target="_blank"
+              title="Click to open discord (works only with friends)"
               >{{msg.author}}
             </a>
             <span class="msg-date"> {{msg.date}}</span>
