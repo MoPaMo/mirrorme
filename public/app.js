@@ -1,14 +1,44 @@
-let vm=Vue.createApp({
+let vm = Vue.createApp({
   data() {
     return {
-      msgs: [{ author: "Cicero", text: "Lorem Ipsum", date: "dies", id:'159985870458322944' },
-      { author: "Cicero", text: "Lorem Ipsum", date: "dies", id:'159985870458322944' },
-      { author: "Cicero", text: "Lorem Ipsum", date: "dies", id:'159985870458322944' },
-      { author: "Cicero", text: "Lorem Ipsum", date: "dies", id:'159985870458322944' }],
-      loading:true
+      msgs: [
+        {
+          author: "Cicero",
+          text: "Lorem Ipsum",
+          date: "dies",
+          id: "159985870458322944",
+          img:
+            "https://cdn.discordapp.com/avatars/159985870458322944/b50adff099924dd5e6b72d13f77eb9d7.png?size=128",
+        },
+        {
+          author: "Cicero",
+          text: "Lorem Ipsum",
+          date: "dies",
+          id: "159985870458322944",
+          img:
+            "https://cdn.discordapp.com/avatars/159985870458322944/b50adff099924dd5e6b72d13f77eb9d7.png?size=128",
+        },
+        {
+          author: "Cicero",
+          text: "Lorem Ipsum",
+          date: "dies",
+          id: "159985870458322944",
+          img:
+            "https://cdn.discordapp.com/avatars/159985870458322944/b50adff099924dd5e6b72d13f77eb9d7.png?size=128",
+        },
+        {
+          author: "Cicero",
+          text: "Lorem Ipsum",
+          date: "dies",
+          id: "159985870458322944",
+          img:
+            "https://cdn.discordapp.com/avatars/159985870458322944/b50adff099924dd5e6b72d13f77eb9d7.png?size=128",
+        },
+      ],
+      loading: true,
     };
   },
-  mounted(){
-      this.loading=false;
-  }
+  mounted() {
+    this.loading = false;
+  },
 }).mount("#main");
