@@ -51,6 +51,14 @@ app.get('/c/:server/:pwd', (req, res) => {
 
 // </express>
 
+// <socketIO>
+
+io.on('connection', (socket)=>{
+  console.log("New connection:")
+  console.log(socket)
+})
+// </socketIO>
+
 // <discordJS>
 client.once('ready', () => {
   console.log('Ready!');
