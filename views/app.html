@@ -13,7 +13,7 @@
   </head>
 
   <body id="main">
-    <div id="loadscreen" v-if="loading"><br />LOADING...<br/>{{load_reason}}</div>
+    <div id="loadscreen" v-if="loading"><br /><span style="font-weight:bolder">LOADING...</span><br/><i>{{load_reason}}</i></div>
     <!--chat app-->
     <main id="chat" v-if="!loading">
       <div class="message" v-for="msg in msgs">

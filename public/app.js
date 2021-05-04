@@ -42,7 +42,7 @@ let vm = Vue.createApp({
   },
   mounted() {
     var socket = io();
-    this.load_reason="Establishing a connection…"
+    this.load_reason="Establishing a connection…";
     socket.on('connect', (socket) => {
   console.log('a user connected');
   this.loading = false;
