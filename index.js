@@ -53,9 +53,15 @@ app.get('/c/:server/:pwd', (req, res) => {
 
 // <socketIO>
 
-io.on('connection', (socket)=>{
-  
-  let url=socket.handshake.headers.referer
+io.on('connection', (socket) => {
+
+  let url = socket.handshake.headers.referer
+  const regex = /^https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
+  if(regex.test(url)){
+
+  }else{
+    socket.emit("error", "URL didn't match")
+  }
 
 })
 
@@ -71,7 +77,7 @@ client.on('guildCreate', (guild) => {
 });
 client.on('message', message => {
 
-  if (message.channel.type !== 'dm'&&!message.author.bot) {
+  if (message.channel.type !== 'dm' && !message.author.bot) {
 
     if (message.content === '!m-start') {
       message.channel.send('Theoretically started mirroring…');
@@ -79,7 +85,7 @@ client.on('message', message => {
       message.channel.send('Your link is: ||https://mirror.mopamo.repl.co/c/' + message.guild.id + "/" + a + ' || . Others are now able to watch your chat through this link. Type `!m-stop` to prevent that');
       db.set(message.guild.id, { pwd: a, channel: message.channel.id, created: new Date(), name: message.author.id })
     }
-    else if (message.content==="!m-ping"){
+    else if (message.content === "!m-ping") {
       message.channel.send("I'm online! You can view my status here: https://stats.uptimerobot.com/BErLNFVkyE")
     }
     else
@@ -103,6 +109,7 @@ client.on('message', message => {
         else {
           message.react('👁');
           console.log(message.author.avatarURL())
+
         }
   } else {
     //DM
@@ -115,7 +122,7 @@ client.on('message', message => {
 server.listen(3000, () => {
   console.log('listening on *:3000');
 });
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   res.status(404).sendFile(`${__dirname}/views/404.html`);
 });
 client.login(process.env['dctoken']);
