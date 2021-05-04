@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="/public/app.css" />
     <link rel="stylesheet" href="/icons.css" />
     <link rel="icon" type="image/svg+xml" href="/ico.svg" />
-    <meta name="description" content="Mirror discord to the web using mirrorme, the open source discord bot ">
+    <meta
+      name="description"
+      content="Mirror discord to the web using mirrorme, the open source discord bot "
+    />
     <link rel="alternate icon" href="/fav.ico" />
     <link rel="mask-icon" href="/ico.svg" color="#000" />
   </head>
 
   <body id="main">
-    <div id="loadscreen" v-if="loading"><br /><span style="font-weight:bolder">LOADING...</span><br/><i>{{load_reason}}</i></div>
+    <div id="loadscreen" v-if="loading">
+      <br /><span style="font-weight: bolder">LOADING...</span><br /><i
+        >{{load_reason}}</i
+      >
+    </div>
     <!--chat app-->
     <main id="chat" v-if="!loading">
       <div class="message" v-for="msg in msgs">
@@ -42,7 +49,10 @@
       </div>
     </main>
     <!-- /chat app-->
-    <aside id="aside" v-if="!loading"><h1>mirrorme</h1> mirroring</aside>
+    <aside id="aside" v-if="!loading">
+      <h1>mirrorme</h1>
+      mirroring
+    </aside>
     <section id="writebar" v-if="!loading"><input /></section>
     <section v-if="!loading">share mirrorme</section>
     <script src="/public/vue.global.js"></script>
