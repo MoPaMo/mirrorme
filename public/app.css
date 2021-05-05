@@ -60,6 +60,7 @@ body {
   outline: none;
 }
 .message {
+  padding-top: 0.4rem;
   display: grid;
   grid-gap: 1vw;
   grid-template-columns: 2.5rem auto;
