@@ -87,3 +87,21 @@ text-decoration: underline;
 .message .prof-image img:hover {
   border-radius: 0.5rem;
 }
+@media only screen and (max-width: 640px) {
+html,body{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 5rem auto 7.5vh;
+
+}
+#aside{
+  grid-row: 1/2;
+  max-height: 5rem;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.hide-mobile
+{
+  display: none;
+}
+}
