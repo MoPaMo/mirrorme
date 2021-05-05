@@ -1,7 +1,6 @@
 let vm = Vue.createApp({
   data() {
     return {
-      
       msgs: [
         {
           author: "Cicero",
@@ -37,21 +36,19 @@ let vm = Vue.createApp({
         },
       ],
       loading: true,
-      load_reason:"Starting app…",
-      servername:"Loading name"
+      load_reason: "Starting app…",
+      servername: "Loading name",
     };
   },
   mounted() {
-    
-    this.load_reason="Establishing a connection…";
-    
+    this.load_reason = "Establishing a connection…";
   },
 }).mount("#main");
 var socket = io();
-    socket.on('connect', (socket) => {
-  console.log('connected to server');
+socket.on("connect", (socket) => {
+  console.log("connected to server");
   this.loading = false;
 });
-socket.on("error", (msg)=>{
-  open("/error", "_self")
-})
+socket.on("error", (msg) => {
+  open("/error", "_self");
+});
