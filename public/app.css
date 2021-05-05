@@ -18,15 +18,15 @@ body {
   width: 100vw;
   height: 100vh;
 }
-#loadscreen{
-  position:absolute;
-  top:0px;
-  left:0px;
-  width:100vw;
-  height:100vh;
-  overflow:clip;
-  background-color:#2f3236;
-  text-align:center
+#loadscreen {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  overflow: clip;
+  background-color: #2f3236;
+  text-align: center;
 }
 #aside {
   background-color: #232629;
@@ -60,22 +60,29 @@ body {
   outline: none;
 }
 .message {
-    display:grid;
-    grid-gap: 1vw;
-    grid-template-columns: 2.5rem auto ;
-
+  display: grid;
+  grid-gap: 1vw;
+  grid-template-columns: 2.5rem auto;
 }
-.message .text .msg-info .msg-date{
-    color:gray;
-    font-size: 0.75rem;
+.message .text .msg-info .msg-date {
+  color: gray;
+  font-size: 0.75rem;
 }
-.message .text .msg-info .msg-author{
-  color:#fff;
+.message .text .msg-info .msg-author {
+  color: #fff;
   font-weight: bolder;
   text-decoration: none;
 }
-.message .text .msg-info .msg-author:hover, .message .text .msg-info .msg-author:focus .message .text .msg-info .msg-author:active {
-text-decoration: underline;
+.message .text .msg-info .msg-author:hover,
+.message
+  .text
+  .msg-info
+  .msg-author:focus
+  .message
+  .text
+  .msg-info
+  .msg-author:active {
+  text-decoration: underline;
 }
 .message .prof-image img {
   transition-duration: 0.5s;
@@ -84,24 +91,39 @@ text-decoration: underline;
   border-radius: 2.5rem;
   cursor: pointer;
 }
+.message .prof-image {
+  max-height: 2.5rem;
+}
 .message .prof-image img:hover {
   border-radius: 0.5rem;
 }
-@media only screen and (max-width: 640px) {
-html,body{
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 5rem auto 7.5vh;
+.message .prof-image {
+  max-height: 2.5rem;
+}
+@media only screen and (min-width: 641px) {
+  .show-mobile {
+    display: none;
+  }
+}
 
-}
-#aside{
-  grid-row: 1/2;
-  max-height: 5rem;
-  overflow-y: hidden;
-  overflow-x: scroll;
-}
-.hide-mobile
-{
-  display: none;
-}
+@media only screen and (max-width: 640px) {
+  html,
+  body {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 5rem auto 7.5vh;
+  }
+  #chat {
+    padding: 0.5rem;
+  }
+  #aside {
+    grid-row: 1/2;
+    max-height: 5rem;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding-left: 0.5rem;
+  }
+  .hide-mobile {
+    display: none;
+  }
 }
