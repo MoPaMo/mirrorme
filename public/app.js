@@ -52,3 +52,6 @@ socket.on("connect", (socket) => {
 socket.on("error", (msg) => {
   open("/error", "_self");
 });
+socket.on("msg", (msg)=>{
+  //vm.msgs.push({})
+})
