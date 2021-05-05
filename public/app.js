@@ -37,13 +37,13 @@ let vm = Vue.createApp({
         },
       ],
       loading: true,
-      load_reason:"Starting app…"
+      load_reason:"Starting app…",
+      servername:"Loading name"
     };
   },
   mounted() {
     
     this.load_reason="Establishing a connection…";
-
     
   },
 }).mount("#main");
