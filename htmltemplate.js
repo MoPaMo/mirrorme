@@ -1,4 +1,7 @@
-module.exports={function html_render(string){return```
+module.exports = {
+  html_render: function (string) {
+    return (
+      ```
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +50,9 @@ module.exports={function html_render(string){return```
     </div>
   </nav>
   <br /><br /><br />
-```+string+```
+``` +
+      string +
+      ```
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
@@ -105,4 +110,7 @@ module.exports={function html_render(string){return```
 </body>
 
 </html>
-```}}
+```
+    );
+  },
+};
