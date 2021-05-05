@@ -12,7 +12,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const Database = require("@replit/database");
 const db = new Database();
-const regex = /^https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
+
 //discord
 function getRnd(ind) {
   var a = "";
@@ -54,27 +54,35 @@ app.get("/c/:server/:pwd", (req, res) => {
 // <socketIO>
 
 io.on("connection", (socket) => {
+  const regex = /^https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
   let url = socket.handshake.headers.referer;
-
-  if (regex.test(url)) {
+  console.log(url)
+  if (regex.test(socket.handshake.headers.referer)) {
     let matches = /https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})/.exec(
       url
     );
     let server_id = matches[1];
     let server_pwd = matches[2];
+    
     db.get(server_id).then((record) => {
       if (record == null) {
+        socket.emit("error", "NotRegistered")
       } else {
         //record found
         if (record.pwd != null && record.pwd == server_pwd) {
           console.log("Signed in");
+        }
+        else{
+          socket.emit("error", "Password didn't match")
         }
       }
       console.log(record);
     });
   } else {
     socket.emit("error", "URL didn't match");
+    console.log("error")
   }
+
 });
 
 // </socketIO>
