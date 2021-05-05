@@ -62,6 +62,15 @@ io.on('connection', (socket) => {
    let server_id=matches[1]
    let server_pwd=matches[2]
     db.get(server_id).then((record)=>{
+      if(record==null){
+
+      }
+      else{
+        //record found
+        if(record.pwd!=null&&record.pwd==server_pwd){
+          console.log("Signed in")
+        }
+      }
     console.log(record)})
   }else{
     socket.emit("error", "URL didn't match")
