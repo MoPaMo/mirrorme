@@ -73,13 +73,13 @@ io.on("connection", (socket) => {
           console.log("Signed in");
         }
         else{
-          socket.emit("error", "Password didn't match")
+          socket.emit("error", "pwd_wrong")
         }
       }
       console.log(record);
     });
   } else {
-    socket.emit("error", "URL didn't match");
+    socket.emit("error", "url_error");
     console.log("error")
   }
 
