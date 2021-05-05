@@ -50,11 +50,11 @@ socket.on("connect", (socket) => {
   vm.loading = false;
 });
 socket.on("error", (msg) => {
-  if(msg=="NotRegistered"){
-    open("/error/register", "_self")
+  if (msg == "NotRegistered") {
+    open("/error/register", "_self");
+  } else {
+    open("/error?reason=" + encodeURI(msg), "_self");
   }
-  else{
-  open("/error?reason="+encodeURI(msg), "_self");}
 });
 socket.on("msg", (msg) => {
   //vm.msgs.push({})
