@@ -48,7 +48,7 @@ var socket = io();
 socket.on('connect', (socket) => {
   console.log('connected to server');
   vm.loading = false;
->>>>>>> 1c7c470b991a50c9a46938b5409045182258e033
+
 });
 socket.on("error", (msg) => {
   open("/error", "_self");
