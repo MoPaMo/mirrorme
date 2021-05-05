@@ -23,6 +23,30 @@
     </div>
     <!--chat app-->
     <main id="chat" v-if="!loading">
+      <div class="message show-mobile" >
+        <a
+          class="prof-image"
+          target="_blank"
+          href="https://discordapp.com/users/835079528770043925"
+          ><img
+            src="https://cdn.discordapp.com/avatars/835079528770043925/1407143f06a8bded9d387c32010757ee.png?size=128"
+            alt="MirrorMe icon"
+            title="Click to open discord (works only with friends)"
+        /></a>
+        <div class="text">
+          <div class="msg-info">
+            <a
+              class="msg-author"
+              href="https://discordapp.com/users/835079528770043925"
+              target="_blank"
+              title="Click to open discord (works only with friends)"
+              >mirrorme
+            </a>
+            <span class="msg-date"> now</span>
+          </div>
+          <div class="msg-text">Mirroring {{servername}}</div>
+        </div>
+      </div>
       <div class="message" v-for="msg in msgs">
         <a
           class="prof-image"
