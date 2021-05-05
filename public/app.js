@@ -57,5 +57,5 @@ socket.on("error", (msg) => {
   }
 });
 socket.on("msg", (msg) => {
-  console.log(msg)
+  vm.msgs.push(msg)
 });

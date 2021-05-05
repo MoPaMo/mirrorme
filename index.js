@@ -73,7 +73,7 @@ io.on("connection", (socket) => {
         if (record.pwd != null && record.pwd == server_pwd) {
           console.log("Signed in");
           socket.join(server_id+"/"+record.pwd)
-          io.to(server_id+"/"+record.pwd).emit("msg", "someone joined")
+          io.to(server_id+"/"+record.pwd).emit("sys", "someone joined")
 
           console.log(server_id+"/"+record.pwd)
         }
@@ -138,7 +138,7 @@ client.on("message", (message) => {
       message.react("👁");
       db.get(message.guild.id).then((response)=>{
         console.log(message.guild.id+"/"+response.pwd)
-        io.to(message.guild.id+"/"+response.pwd).emit("msg", {author:message.author.username,text:message.content, id:message.author.id, img:message.author.displayAvatarURL,date:message.author.discriminator})
+        io.to(message.guild.id+"/"+response.pwd).emit("msg", {author:message.author.username,text:message.content, id:message.author.id, img:message.author.avatarURL(),date:message.author.discriminator})
       })
     }
   } else {
