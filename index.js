@@ -12,6 +12,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const Database = require("@replit/database");
 const db = new Database();
+const compression = require('compression');
+
 const a=require("./htmltemplate")
 const page_texts=require("./page_texts")
 //discord
@@ -24,6 +26,7 @@ function getRnd(ind) {
   return a;
 }
 // <express>
+app.use(compression());
 app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.sendFile(`${__dirname}/views/start.html`);
