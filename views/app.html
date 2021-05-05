@@ -25,6 +25,7 @@
     <main id="chat" v-if="!loading">
       <div class="message show-mobile">
         <a
+        rel="noopener"
           class="prof-image"
           target="_blank"
           href="https://discordapp.com/users/835079528770043925"
@@ -36,6 +37,7 @@
         <div class="text">
           <div class="msg-info">
             <a
+            rel="noopener"
               class="msg-author"
               href="https://discordapp.com/users/835079528770043925"
               target="_blank"
@@ -49,6 +51,7 @@
       </div>
       <div class="message" v-for="msg in msgs">
         <a
+        rel="noopener"
           class="prof-image"
           target="_blank"
           :href="'https://discordapp.com/users/'+msg.id"
@@ -60,6 +63,7 @@
         <div class="text">
           <div class="msg-info">
             <a
+            rel="noopener"
               class="msg-author"
               :href="'https://discordapp.com/users/'+msg.id"
               target="_blank"
