@@ -12,7 +12,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const Database = require("@replit/database")
 const db = new Database()
-
+const regex = /^https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
 //discord
 function getRnd(ind) {
   var a = "";
@@ -56,9 +56,13 @@ app.get('/c/:server/:pwd', (req, res) => {
 io.on('connection', (socket) => {
 
   let url = socket.handshake.headers.referer
-  const regex = /^https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
-  if(regex.test(url)){
 
+  if(regex.test(url)){
+   let matches= /https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})/.exec(url)
+   let server_id=matches[1]
+   let server_pwd=matches[2]
+    db.get(server_id).then((record)=>{
+    console.log(record)})
   }else{
     socket.emit("error", "URL didn't match")
   }
