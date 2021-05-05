@@ -45,14 +45,13 @@ let vm = Vue.createApp({
   },
 }).mount("#main");
 var socket = io();
-socket.on('connect', (socket) => {
-  console.log('connected to server');
+socket.on("connect", (socket) => {
+  console.log("connected to server");
   vm.loading = false;
-
 });
 socket.on("error", (msg) => {
   open("/error", "_self");
 });
-socket.on("msg", (msg)=>{
+socket.on("msg", (msg) => {
   //vm.msgs.push({})
-})
+});
