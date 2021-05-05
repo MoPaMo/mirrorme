@@ -72,8 +72,10 @@ io.on("connection", (socket) => {
         //record found
         if (record.pwd != null && record.pwd == server_pwd) {
           console.log("Signed in");
-          socket.join(record.id+"/"+record.pwd)
-          socket.to(record.channel+"/"+record.pwd).emit("msg", "someone joined")
+          socket.join(server_id+"/"+record.pwd)
+          io.to(server_id+"/"+record.pwd).emit("msg", "someone joined")
+
+          console.log(server_id+"/"+record.pwd)
         }
         else{
           socket.emit("error", "pwd_wrong")
@@ -134,7 +136,10 @@ client.on("message", (message) => {
       });
     } else {
       message.react("👁");
-      console.log(message.author.avatarURL());
+      db.get(message.guild.id).then((response)=>{
+        console.log(message.guild.id+"/"+response.pwd)
+        io.to(message.guild.id+"/"+response.pwd).emit("msg", {author:message.author.username,text:message.content, id:message.author.id, img:message.author.displayAvatarURL,date:message.author.discriminator})
+      })
     }
   } else {
     //DM
