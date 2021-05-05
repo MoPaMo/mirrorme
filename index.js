@@ -12,7 +12,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const Database = require("@replit/database");
 const db = new Database();
-
+const a=require("./htmltemplate")
+const page_texts=require("./page_texts")
 //discord
 function getRnd(ind) {
   var a = "";
@@ -71,6 +72,8 @@ io.on("connection", (socket) => {
         //record found
         if (record.pwd != null && record.pwd == server_pwd) {
           console.log("Signed in");
+          socket.join(record.id+"/"+record.pwd)
+          socket.to(record.channel+"/"+record.pwd).emit("msg", "someone joined")
         }
         else{
           socket.emit("error", "pwd_wrong")
