@@ -11,8 +11,8 @@ let vm = Vue.createApp({
   methods: {
     send_handle() {
       if (this.send_val.trim()) {
-        socket.emit("msg", this.send_val, () => {
-          this.send_val = "";
+        socket.emit("msg", this.send_val, function(confirmation) {
+          this.send_val = confirmation;
         });
       }
     },
