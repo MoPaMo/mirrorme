@@ -1,9 +1,7 @@
 let vm = Vue.createApp({
   data() {
     return {
-      msgs: [
-        
-      ],
+      msgs: [],
       loading: true,
       load_reason: "Starting app…",
       servername: "Loading name",
@@ -26,5 +24,5 @@ socket.on("error", (msg) => {
   }
 });
 socket.on("msg", (msg) => {
-  vm.msgs.push(msg)
+  vm.msgs.push(msg);
 });
