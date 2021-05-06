@@ -155,7 +155,12 @@ client.on("message", (message) => {
     } else if (message.content === "!m-info") {
       db.get(message.guild.id).then((val) => {
         message.channel.send(`Created at ${val.created} by <@${val.name}>`);
-      });
+      });}
+      else if (message.content === "!m-url") {
+        db.get(message.guild.id).then((val) => {
+          if(val!=null&&val.pwd!=null){
+          message.channel.send(`https://mopamo.repl.co/c/${message.guild.id}/${val.pwd}`);}
+        });
     } else if (message.content === "!m-stop") {
       db.get(message.guild.id).then((val) => {
         message.channel.send("Created at " + val.created);
