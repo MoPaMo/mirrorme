@@ -1,3 +1,4 @@
+var socket = io();
 let vm = Vue.createApp({
   data() {
     return {
@@ -22,7 +23,7 @@ let vm = Vue.createApp({
     this.load_reason = "Establishing a connection…";
   },
 }).mount("#main");
-var socket = io();
+
 socket.on("connect", (socket) => {
   console.log("connected to server");
   vm.loading = false;
