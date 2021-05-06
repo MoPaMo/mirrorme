@@ -91,11 +91,7 @@ io.on("connection", (socket) => {
           client.channels.cache
             .get(record.channel)
             .send(
-              "Someone joined on the web page (`!m-url`" +
-                server_id +
-                "/" +
-                record.pwd +
-                "). Device information:" +
+              "Someone joined on the web page (`!m-url`). Device information:" +
                 (browser.browser.name == null
                   ? "No browser detected"
                   : browser.browser.name) +
