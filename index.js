@@ -116,6 +116,9 @@ io.on("connection", (socket) => {
   }
 });
 
+io.on("msg", (data)=>{
+  console.log(data)
+})
 // </socketIO>
 
 // <discordJS>
