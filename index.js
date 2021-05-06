@@ -134,7 +134,7 @@ io.on("connection", (socket) => {
         if (record.pwd != null && record.pwd == server_pwd) {
           client.channels.cache
             .get(record.channel)
-            .send("someone said: "+data)
+            .send("Someone said: "+data)
         }}})}
 })
 });
