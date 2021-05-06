@@ -5,7 +5,16 @@ let vm = Vue.createApp({
       loading: true,
       load_reason: "Starting app…",
       servername: "Loading name",
+      send_val:""
     };
+  },
+  methods:{
+    send_handle(){
+      if(this.send_val.trim()){
+        socket.emit("msg", this.send_val, ()=>{
+        this.send_val=""})
+      }
+    }
   },
   mounted() {
     this.load_reason = "Establishing a connection…";
