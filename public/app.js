@@ -13,7 +13,10 @@ let vm = Vue.createApp({
     send_handle() {
       if (this.send_val.trim()) {
         console.log("Sending msg")
-        socket.emit("msg", this.send_val);
+        socket.emit("msg", this.send_val, function(aw){
+          console.log(aw)
+          this.send_val=""
+        });
       }else{
         console.log("Message was whitespace")
       }
