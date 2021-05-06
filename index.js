@@ -114,11 +114,12 @@ io.on("connection", (socket) => {
     socket.emit("error", "url_error");
     console.log("error");
   }
-});
-
-io.on("msg", (data)=>{
+  socket.on("msg", (data)=>{
   console.log(data)
 })
+});
+
+
 // </socketIO>
 
 // <discordJS>
