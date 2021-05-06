@@ -37,6 +37,9 @@ app.get("/public/app.css", (req, res) => {
 app.get("/public/app.js", (req, res) => {
   res.sendFile(`${__dirname}/public/app.js`);
 });
+app.get("/error/register", (req, res) => {
+  res.sendFile(`${__dirname}/public/error_register.html`);
+});
 app.get("/public/vue.global.js", (req, res) => {
   res.sendFile(`${__dirname}/public/vue.global.js`);
 });
