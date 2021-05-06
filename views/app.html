@@ -82,7 +82,12 @@
       mirroring
     </aside>
     <section id="writebar" v-if="!loading">
-      <input label="Message chat" placeholder="Message #server" v-model="send_val" @keyup.enter="send_handle"/>
+      <input
+        label="Message chat"
+        placeholder="Message #server"
+        v-model="send_val"
+        @keyup.enter="send_handle"
+      />
     </section>
     <section v-if="!loading" class="hide-mobile">share mirrorme</section>
     <script
