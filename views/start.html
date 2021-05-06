@@ -2,25 +2,25 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mirrorme | a discord bot</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-  <link rel="stylesheet" href="/icons.css">
-  <link rel="icon" type="image/svg+xml" href="/ico.svg">
-  <link rel="alternate icon" href="/fav.ico">
-  <link rel="mask-icon" href="/ico.svg" color="#000">
-  <meta name="description" content="Mirrorme: An open source Discord bot to mirror all your server's messages to the web!">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>mirrorme | a discord bot</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+	<link rel="stylesheet" href="/icons.css">
+	<link rel="icon" type="image/svg+xml" href="/ico.svg">
+	<link rel="alternate icon" href="/fav.ico">
+	<link rel="mask-icon" href="/ico.svg" color="#000">
+	<meta name="description" content="Mirrorme: An open source Discord bot to mirror all your server's messages to the web!">
 </head>
 
 <body>
-  <nav class="navbar is-info is-fixed-top" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item title" href="https://mirror.mopamo.repl.co">
-        mirrorme </a>
+	<nav class="navbar is-info is-fixed-top" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<a class="navbar-item title" href="https://mirror.mopamo.repl.co">
+				mirrorme </a>
 
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
+			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+				<span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
@@ -73,6 +73,29 @@
       </p>
     </div>
   </section>
+<section class="section">
+  
+  <div class="container">
+    <h1 class="title is-size-4">Log In</h1>
+  <form method="POST" action="/app-fwd/">
+  
+<div class="field">
+  <label class="label">Server ID</label>
+  <div class="control">
+    <input class="input" name="id" type="text" placeholder="e.g 123456789">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Password</label>
+  <div class="control">
+    <input class="input" type="password"  name="pwd" placeholder="e.g. kLX6wRpNLxnJiNSg1OGp">
+  </div>
+</div>
+
+  </form>
+</div>
+</section>
   <div class="card">
     <header class="card-header">
       <p class="card-header-title">Most recent commits</p>

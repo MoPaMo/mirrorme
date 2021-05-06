@@ -10,6 +10,7 @@ const io = new Server(server); //socket.io
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const Bowser = require("bowser");
 const Database = require("@replit/database");
 const db = new Database();
 const compression = require('compression');
@@ -49,6 +50,9 @@ app.get("/finish", (req, res) => {
 app.get("/license", (req, res) => {
   res.sendFile(`${__dirname}/views/license.html`);
 });
+app.post("/app-fwd", (req, res) => {
+     res.redirect('/c/'+req.query.id+'/'+req.query.pwd);
+});
 app.get("/c/:server/:pwd", (req, res) => {
   res.sendFile(`${__dirname}/views/app.html`);
 });
@@ -77,8 +81,11 @@ io.on("connection", (socket) => {
           console.log("Signed in");
           socket.join(server_id+"/"+record.pwd)
           io.to(server_id+"/"+record.pwd).emit("sys", "someone joined")
-
+          let agent=socket.handshake.headers["user-agent"];
+          let browser = Bowser.parse(agent)
+          console.log(browser)
           console.log(server_id+"/"+record.pwd)
+           client.channels.cache.get(record.channel).send('Someone joined on the web page (https://mirror.mopamo.repl.co/c/'+server_id+'/'+record.pwd+'). Device information:'+(browser.browser.name==null?"No browser detected":browser.browser.name)+" on "+(browser.os.name==null?"No OS detected":browser.os.name)+" "+(browser.os.versionName==null?(browser.os.version==null?"":browser.os.version):browser.os.versionName))
         }
         else{
           socket.emit("error", "pwd_wrong")

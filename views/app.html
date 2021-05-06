@@ -72,8 +72,8 @@
             </a>
             <span class="msg-date"> {{msg.date}}</span>
           </div>
-          <div class="msg-text">{{msg.text}}</div>
         </div>
+          <div class="msg-text">{{msg.text}}</div>
       </div>
     </main>
     <!-- /chat app-->
@@ -83,8 +83,11 @@
     </aside>
     <section id="writebar" v-if="!loading"><input label="Message chat" placeholder="Message #server"/></section>
     <section v-if="!loading" class="hide-mobile">share mirrorme</section>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <script src="/public/vue.global.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/public/app.js"></script>
+
+
   </body>
 </html>
