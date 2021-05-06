@@ -13,10 +13,10 @@ const client = new Discord.Client();
 const Bowser = require("bowser");
 const Database = require("@replit/database");
 const db = new Database();
-const compression = require('compression');
+const compression = require("compression");
 
-const a=require("./htmltemplate")
-const page_texts=require("./page_texts")
+const a = require("./htmltemplate");
+const page_texts = require("./page_texts");
 //discord
 function getRnd(ind) {
   var a = "";
@@ -54,7 +54,7 @@ app.get("/license", (req, res) => {
   res.sendFile(`${__dirname}/views/license.html`);
 });
 app.post("/app-fwd", (req, res) => {
-     res.redirect('/c/'+req.query.id+'/'+req.query.pwd);
+  res.redirect("/c/" + req.query.id + "/" + req.query.pwd);
 });
 app.get("/c/:server/:pwd", (req, res) => {
   res.sendFile(`${__dirname}/views/app.html`);
@@ -67,40 +67,57 @@ app.get("/c/:server/:pwd", (req, res) => {
 io.on("connection", (socket) => {
   const regex = /^https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
   let url = socket.handshake.headers.referer;
-  console.log(url)
+  console.log(url);
   if (regex.test(socket.handshake.headers.referer)) {
     let matches = /https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})/.exec(
       url
     );
     let server_id = matches[1];
     let server_pwd = matches[2];
-    
+
     db.get(server_id).then((record) => {
       if (record == null) {
-        socket.emit("error", "NotRegistered")
+        socket.emit("error", "NotRegistered");
       } else {
         //record found
         if (record.pwd != null && record.pwd == server_pwd) {
           console.log("Signed in");
-          socket.join(server_id+"/"+record.pwd)
-          io.to(server_id+"/"+record.pwd).emit("sys", "someone joined")
-          let agent=socket.handshake.headers["user-agent"];
-          let browser = Bowser.parse(agent)
-          console.log(browser)
-          console.log(server_id+"/"+record.pwd)
-           client.channels.cache.get(record.channel).send('Someone joined on the web page (https://mirror.mopamo.repl.co/c/'+server_id+'/'+record.pwd+'). Device information:'+(browser.browser.name==null?"No browser detected":browser.browser.name)+" on "+(browser.os.name==null?"No OS detected":browser.os.name)+" "+(browser.os.versionName==null?(browser.os.version==null?"":browser.os.version):browser.os.versionName))
-        }
-        else{
-          socket.emit("error", "pwd_wrong")
+          socket.join(server_id + "/" + record.pwd);
+          io.to(server_id + "/" + record.pwd).emit("sys", "someone joined");
+          let agent = socket.handshake.headers["user-agent"];
+          let browser = Bowser.parse(agent);
+          console.log(browser);
+          console.log(server_id + "/" + record.pwd);
+          client.channels.cache
+            .get(record.channel)
+            .send(
+              "Someone joined on the web page (https://mirror.mopamo.repl.co/c/" +
+                server_id +
+                "/" +
+                record.pwd +
+                "). Device information:" +
+                (browser.browser.name == null
+                  ? "No browser detected"
+                  : browser.browser.name) +
+                " on " +
+                (browser.os.name == null ? "No OS detected" : browser.os.name) +
+                " " +
+                (browser.os.versionName == null
+                  ? browser.os.version == null
+                    ? ""
+                    : browser.os.version
+                  : browser.os.versionName)
+            );
+        } else {
+          socket.emit("error", "pwd_wrong");
         }
       }
       console.log(record);
     });
   } else {
     socket.emit("error", "url_error");
-    console.log("error")
+    console.log("error");
   }
-
 });
 
 // </socketIO>
@@ -149,10 +166,16 @@ client.on("message", (message) => {
       });
     } else {
       message.react("👁");
-      db.get(message.guild.id).then((response)=>{
-        console.log(message.guild.id+"/"+response.pwd)
-        io.to(message.guild.id+"/"+response.pwd).emit("msg", {author:message.author.username,text:message.content, id:message.author.id, img:message.author.avatarURL(),date:message.author.discriminator})
-      })
+      db.get(message.guild.id).then((response) => {
+        console.log(message.guild.id + "/" + response.pwd);
+        io.to(message.guild.id + "/" + response.pwd).emit("msg", {
+          author: message.author.username,
+          text: message.content,
+          id: message.author.id,
+          img: message.author.avatarURL(),
+          date: message.author.discriminator,
+        });
+      });
     }
   } else {
     //DM
