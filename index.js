@@ -91,7 +91,7 @@ io.on("connection", (socket) => {
           client.channels.cache
             .get(record.channel)
             .send(
-              "Someone joined on the web page (https://mirror.mopamo.repl.co/c/" +
+              "Someone joined on the web page (`!m-url`" +
                 server_id +
                 "/" +
                 record.pwd +
