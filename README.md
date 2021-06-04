@@ -2,6 +2,7 @@
 A discord bot to mirror all messages to the web
 
 ------
+![License: MIT](https://img.shields.io/github/license/MoPaMo/mirrorme) ![n issues open](https://img.shields.io/github/issues/MoPaMo/mirrorme)
 
 mirrorme is an open source discord bot, which creates a web interface, where others can read your messages
 
