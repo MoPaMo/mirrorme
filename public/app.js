@@ -17,6 +17,7 @@ let vm = Vue.createApp({
           console.log(aw)
           this.send_val=""
         });
+        this.send_val=""
       }else{
         console.log("Message was whitespace")
       }
