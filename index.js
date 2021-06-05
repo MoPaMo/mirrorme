@@ -206,7 +206,18 @@ client.on("message", (message) => {
 					message.channel.send("Looks like we didn't activly mirrored this server 🤷. If you want to fo that, type `!m-start`");
 				}
 			});
-		} else {
+		} 
+    
+    else if (message.content === "!m-leave") {
+      if(message.member.hasPermission('ADMINISTRATOR')){
+        
+      }else{
+
+        message.respond("sorry, you don't have the permission to remove me. Ask an admin to do so!")
+      }
+      }
+      
+      else {
 
 			db.get(message.guild.id).then((response) => {
 				if (response) {
