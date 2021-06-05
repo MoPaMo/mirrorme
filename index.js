@@ -192,15 +192,24 @@ client.on("message", (message) => {
       });
     } else if (message.content === "!m-stop") {
       db.get(message.guild.id).then((val) => {
+        
+        if(val){
+
         message.channel.send("Created at " + val.created);
 
         db.delete(message.guild.id).then(() => {
           message.channel.send("We've deleted your data and stopped mirroring");
+          message.guild.me.setNickname("MirrorMe - type !m-help for help")
         });
-      });
+      }
+      else{
+        message.channel.send("Looks like we didn't activly mirrored this server 🤷");
+      }});
     } else {
-      message.react("👁");
+      
       db.get(message.guild.id).then((response) => {
+        if(response){
+        message.react("👁");
         console.log(message.guild.id + "/" + response.pwd);
         io.to(message.guild.id + "/" + response.pwd).emit("msg", {
           author: message.author.username,
@@ -209,7 +218,7 @@ client.on("message", (message) => {
           img: message.author.avatarURL(),
           date: message.author.discriminator,
         });
-      });
+      }});
     }
   } else {
     //DM
