@@ -172,7 +172,7 @@ client.on("message", (message) => {
           a +
           " || . Others are now able to watch your chat through this link. Type `!m-stop` to prevent that"
         );
-
+      message.guild.me.setNickname("Mirroring this server.")
 
       });
     } else if (message.content === "!m-ping") {
