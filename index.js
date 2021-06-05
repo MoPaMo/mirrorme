@@ -217,7 +217,13 @@ client.on("message", (message) => {
 
       else if (message.content === "!m-leave") {
         if (message.member.hasPermission('ADMINISTRATOR') || member.roles.cache.some(role => role.name === 'mirrorme_mod')) {
-          message.reply("You've got permission")
+          message.reply("Bye! 👋")
+          let role=message.guild.roles.cache.find(role => role.name === "mirrorme_mod");
+          console.log(role)
+          if(role){
+          role.delete("Since mirrorme left, there's no use for this role. Invite again: https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish")}
+          console.log(role)
+          message.guild.leave();
         } else {
 
           message.reply("sorry, you don't have the permission to remove me. Ask an admin to do so!")
