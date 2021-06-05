@@ -217,7 +217,7 @@ client.on("message", (message) => {
 
       else if (message.content === "!m-leave") {
         if (message.member.hasPermission('ADMINISTRATOR') || member.roles.cache.some(role => role.name === 'mirrorme_mod')) {
-          
+          db.delete(message.guild.id).then(() => {
           let mainchannel = client.channels.cache.get(message.guild.systemChannelID);
  
           const exampleEmbed = new Discord.MessageEmbed()
@@ -241,7 +241,7 @@ mainchannel.send(exampleEmbed);
           console.log(role)
           message.react("🍃")
           //message.guild.leave();
-        } else {
+        })} else {
 
           message.reply("sorry, you don't have the permission to remove me. Ask an admin to do so!")
         }
