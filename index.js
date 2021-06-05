@@ -217,13 +217,30 @@ client.on("message", (message) => {
 
       else if (message.content === "!m-leave") {
         if (message.member.hasPermission('ADMINISTRATOR') || member.roles.cache.some(role => role.name === 'mirrorme_mod')) {
-          message.reply("Bye! 👋")
+          
+          let mainchannel = client.channels.cache.get(message.guild.systemChannelID);
+ 
+          const exampleEmbed = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle("I'm leaving this server! Bye 👋")
+	.setURL(`https://discordapp.com/channels/${message.guild.id}/${message.channel.id}/${message.id}>`)
+	.setAuthor(message.author.username,  message.author.avatarURL())
+	.addField('Regular field title',`    
+If you miss me, you can invite me again: 
+<https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish>`)
+	.setTimestamp()
+	.setFooter(`Caused thrpugh !m-leave by @${message.author.username}`);
+
+mainchannel.send(exampleEmbed);
+
           let role=message.guild.roles.cache.find(role => role.name === "mirrorme_mod");
           console.log(role)
           if(role){
-          role.delete("Since mirrorme left, there's no use for this role. Invite again: https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish")}
+          //role.delete("Since mirrorme left, there's no use for this role. Invite again: https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish")
+          }
           console.log(role)
-          message.guild.leave();
+          message.react("🍃")
+          //message.guild.leave();
         } else {
 
           message.reply("sorry, you don't have the permission to remove me. Ask an admin to do so!")
