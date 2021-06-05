@@ -240,11 +240,11 @@ client.on("message", (message) => {
             let role = message.guild.roles.cache.find(role => role.name === "mirrorme_mod");
             console.log(role)
             if (role) {
-              //role.delete("Since mirrorme left, there's no use for this role. Invite again: https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish")
+              role.delete("Since mirrorme left, there's no use for this role. Invite again: https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish")
             }
             console.log(role)
             message.react("🍃")
-            //message.guild.leave();
+            message.guild.leave();
           })
         } else {
 
