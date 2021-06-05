@@ -92,17 +92,17 @@ io.on("connection", (socket) => {
             .get(record.channel)
             .send(
               "Someone joined on the web page (`!m-url`). Device information:" +
-                (browser.browser.name == null
-                  ? "No browser detected"
-                  : browser.browser.name) +
-                " on " +
-                (browser.os.name == null ? "No OS detected" : browser.os.name) +
-                " " +
-                (browser.os.versionName == null
-                  ? browser.os.version == null
-                    ? ""
-                    : browser.os.version
-                  : browser.os.versionName)
+              (browser.browser.name == null
+                ? "No browser detected"
+                : browser.browser.name) +
+              " on " +
+              (browser.os.name == null ? "No OS detected" : browser.os.name) +
+              " " +
+              (browser.os.versionName == null
+                ? browser.os.version == null
+                  ? ""
+                  : browser.os.version
+                : browser.os.versionName)
             );
         } else {
           socket.emit("error", "pwd_wrong");
@@ -114,29 +114,32 @@ io.on("connection", (socket) => {
     socket.emit("error", "url_error");
     console.log("error");
   }
-  socket.on("msg", (data)=>{
-  console.log(data)
+  socket.on("msg", (data) => {
+    console.log(data)
     const regex = /^https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
-  let url = socket.handshake.headers.referer;
-  console.log(url);
-  if (regex.test(socket.handshake.headers.referer)) {
-    let matches = /https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})/.exec(
-      url
-    );
-    let server_id = matches[1];
-    let server_pwd = matches[2];
+    let url = socket.handshake.headers.referer;
+    console.log(url);
+    if (regex.test(socket.handshake.headers.referer)) {
+      let matches = /https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})/.exec(
+        url
+      );
+      let server_id = matches[1];
+      let server_pwd = matches[2];
 
-    db.get(server_id).then((record) => {
-      if (record == null) {
-        socket.emit("error", "NotRegistered");
-      } else {
-        //record found
-        if (record.pwd != null && record.pwd == server_pwd) {
-          client.channels.cache
-            .get(record.channel)
-            .send("Someone said: "+data)
-        }}})}
-})
+      db.get(server_id).then((record) => {
+        if (record == null) {
+          socket.emit("error", "NotRegistered");
+        } else {
+          //record found
+          if (record.pwd != null && record.pwd == server_pwd) {
+            client.channels.cache
+              .get(record.channel)
+              .send("Someone said: " + data)
+          }
+        }
+      })
+    }
+  })
 });
 
 
@@ -155,18 +158,22 @@ client.on("message", (message) => {
     if (message.content === "!m-start") {
       message.channel.send("Theoretically started mirroring…");
       let a = getRnd(20);
-      message.channel.send(
-        "Your link is: ||https://mirror.mopamo.repl.co/c/" +
-          message.guild.id +
-          "/" +
-          a +
-          " || . Others are now able to watch your chat through this link. Type `!m-stop` to prevent that"
-      );
+
       db.set(message.guild.id, {
         pwd: a,
         channel: message.channel.id,
         created: new Date(),
         name: message.author.id,
+      }).then(() => {
+        message.channel.send(
+          "Your link is: ||https://mirror.mopamo.repl.co/c/" +
+          message.guild.id +
+          "/" +
+          a +
+          " || . Others are now able to watch your chat through this link. Type `!m-stop` to prevent that"
+        );
+
+
       });
     } else if (message.content === "!m-ping") {
       message.channel.send(
@@ -175,12 +182,14 @@ client.on("message", (message) => {
     } else if (message.content === "!m-info") {
       db.get(message.guild.id).then((val) => {
         message.channel.send(`Created at ${val.created} by <@${val.name}>`);
-      });}
-      else if (message.content === "!m-url") {
-        db.get(message.guild.id).then((val) => {
-          if(val!=null&&val.pwd!=null){
-          message.channel.send(`|| https://mirror.mopamo.repl.co/c/${message.guild.id}/${val.pwd} ||`);}
-        });
+      });
+    }
+    else if (message.content === "!m-url") {
+      db.get(message.guild.id).then((val) => {
+        if (val != null && val.pwd != null) {
+          message.channel.send(`|| https://mirror.mopamo.repl.co/c/${message.guild.id}/${val.pwd} ||`);
+        }
+      });
     } else if (message.content === "!m-stop") {
       db.get(message.guild.id).then((val) => {
         message.channel.send("Created at " + val.created);
@@ -215,7 +224,7 @@ client.on("message", (message) => {
 server.listen(3000, () => {
   console.log("listening on *:3000");
 });
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   res.status(404).sendFile(`${__dirname}/views/404.html`);
 });
 client.login(process.env["dctoken"]);
