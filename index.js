@@ -245,7 +245,7 @@ client.on("message", (message) => {
 
       //no permission 
 
-      message.reply("sorry, you have to be admin to use me ☹️")
+      message.reply("sorry, you required to be Admin/have the `mirrorme_mod` role to use me ☹️")
     }
   }//end 
 
