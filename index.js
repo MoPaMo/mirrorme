@@ -203,7 +203,7 @@ client.on("message", (message) => {
         });
       }
       else{
-        message.channel.send("Looks like we didn't activly mirrored this server 🤷");
+        message.channel.send("Looks like we didn't activly mirrored this server 🤷. If you want to fo that, type `!m-start`");
       }});
     } else {
       
