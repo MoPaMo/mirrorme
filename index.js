@@ -155,7 +155,7 @@ client.once("ready", () => {
 client.on("guildCreate", (guild) => {
   let channel = client.channels.cache.get(guild.systemChannelID);
   channel.send("Hi @everyone, I'm **mirrorme**. *Currently under development*");
-  guild.roles.create({ data: { name: 'mirrorme_mod', permissions: [] } }).then(() => {
+  guild.roles.create({ data: { name: 'mirrorme_mod', permissions: [],color:'BLACK' },reason:'Role is used to configure the mirrorme-bot' }).then(() => {
     channel.send("I've just created the `mirrorme_mod` role. You are required to have this role or Admin status to use `!m-`commands. ")
   }).catch(() => {
     channel.send("I've just failed at creating the `mirrorme_mod` role. You are required to have this role or Admin status to use `!m-`commands. *Please add the role manually!* ")
