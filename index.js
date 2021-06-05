@@ -155,7 +155,7 @@ client.once("ready", () => {
 client.on("guildCreate", (guild) => {
   let channel = client.channels.cache.get(guild.systemChannelID);
   channel.send("Hi @everyone, I'm **mirrorme**. *Currently under development*");
-  guild.roles.create({ data: { name: 'mirrorme_mod', permissions: [],color:'BLACK' },reason:'Role is used to configure the mirrorme-bot' }).then(() => {
+  guild.roles.create({ data: { name: 'mirrorme_mod', permissions: [], color: 'BLACK' }, reason: 'Role is used to configure the mirrorme-bot' }).then(() => {
     channel.send("I've just created the `mirrorme_mod` role. You are required to have this role or Admin status to use `!m-`commands. ")
   }).catch(() => {
     channel.send("I've just failed at creating the `mirrorme_mod` role. You are required to have this role or Admin status to use `!m-`commands. *Please add the role manually!* ")
@@ -218,30 +218,35 @@ client.on("message", (message) => {
       else if (message.content === "!m-leave") {
         if (message.member.hasPermission('ADMINISTRATOR') || member.roles.cache.some(role => role.name === 'mirrorme_mod')) {
           db.delete(message.guild.id).then(() => {
-          let mainchannel = client.channels.cache.get(message.guild.systemChannelID);
- 
-          const exampleEmbed = new Discord.MessageEmbed()
-	.setColor('#0099ff')
-	.setTitle("I'm leaving this server! Bye 👋")
-	.setURL(`https://discordapp.com/channels/${message.guild.id}/${message.channel.id}/${message.id}>`)
-	.setAuthor(message.author.username,  message.author.avatarURL())
-	.addField('Regular field title',`    
-If you miss me, you can invite me again: 
+            let mainchannel = client.channels.cache.get(message.guild.systemChannelID);
+
+            const exampleEmbed = new Discord.MessageEmbed()
+              .setColor('#0099ff')
+              .setTitle("I'm leaving this server! Bye 👋")
+              .setURL(`https://discordapp.com/channels/${message.guild.id}/${message.channel.id}/${message.id}>`)
+              .setAuthor(message.author.username, message.author.avatarURL()).addFields(
+                { name: 'What', value: ':white_check_mark: Delete all data from our DB', inline: true },
+                { name: "I'm", value: ':white_check_mark: Remove `mirrorme_mod`-role', inline: true },
+                { name: 'doing:', value: ':white_check_mark: Remove myself', inline: true },
+              )
+              .addField('If you miss me, you can invite me again: ', `    
+
 <https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish>`)
-	.setTimestamp()
-	.setFooter(`Caused thrpugh !m-leave by @${message.author.username}`);
+              .setTimestamp()
+              .setFooter(`Caused through !m-leave by @${message.author.username}`);
 
-mainchannel.send(exampleEmbed);
+            mainchannel.send(exampleEmbed);
 
-          let role=message.guild.roles.cache.find(role => role.name === "mirrorme_mod");
-          console.log(role)
-          if(role){
-          //role.delete("Since mirrorme left, there's no use for this role. Invite again: https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish")
-          }
-          console.log(role)
-          message.react("🍃")
-          //message.guild.leave();
-        })} else {
+            let role = message.guild.roles.cache.find(role => role.name === "mirrorme_mod");
+            console.log(role)
+            if (role) {
+              //role.delete("Since mirrorme left, there's no use for this role. Invite again: https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish")
+            }
+            console.log(role)
+            message.react("🍃")
+            //message.guild.leave();
+          })
+        } else {
 
           message.reply("sorry, you don't have the permission to remove me. Ask an admin to do so!")
         }
