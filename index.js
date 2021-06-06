@@ -163,7 +163,7 @@ client.on("guildCreate", (guild) => {
 });
 client.on("message", (message) => {
   if (message.channel.type !== "dm" && !message.author.bot) {
-    if (message.member.hasPermission('ADMINISTRATOR') || member.roles.cache.some(role => role.name === 'mirrorme_mod')) {
+    if (message.member.hasPermission('ADMINISTRATOR') || message.member.roles.cache.some(role => role.name === 'mirrorme_mod')) {
       if (message.content === "!m-start") {
         message.channel.send("Theoretically started mirroring…");
         let a = getRnd(20);
@@ -273,7 +273,7 @@ client.on("message", (message) => {
 
       //no permission 
 
-      message.reply("sorry, you required to be Admin/have the `mirrorme_mod` role to use me ☹️")
+      message.reply("sorry, you're required to have admin privileges /  the `mirrorme_mod` role to use me ☹️")
     }
   }//end 
 
