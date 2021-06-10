@@ -32,10 +32,13 @@ function getRnd(ind) {
 app.use(compression());
 app.use(express.static("public"));
 app.get("/", (req, res) => {
-  res.sendFile(`${__dirname}/views/start.html`);
+  res.sendFile(`https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish`);
 });
 app.get("/public/app.css", (req, res) => {
   res.sendFile(`${__dirname}/public/app.css`);
+});
+app.get("/add", (req, res) => {
+  res.redirect("")
 });
 app.get("/public/app.js", (req, res) => {
   res.sendFile(`${__dirname}/public/app.js`);
