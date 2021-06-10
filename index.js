@@ -213,7 +213,7 @@ client.on("message", (message) => {
               message.guild.me.setNickname("MirrorMe - type !m-help for help")
             });
           } else {
-            message.channel.send("Looks like we didn't activly mirrored this server 🤷. If you want to fo that, type `!m-start`");
+            message.channel.send("Looks like we didn't activly mirrored this server 🤷. If you want to do that, type `!m-start`");
           }
         });
       }
