@@ -5,9 +5,7 @@ const server = http.createServer(app);
 
 const crypto = require("crypto");
 const abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-const {
-  Server
-} = require("socket.io");
+const { Server } = require("socket.io");
 const io = new Server(server); //socket.io
 
 const Discord = require("discord.js");
@@ -38,7 +36,9 @@ app.get("/public/app.css", (req, res) => {
   res.sendFile(`${__dirname}/public/app.css`);
 });
 app.get("/add", (req, res) => {
-  res.redirect("https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish")
+  res.redirect(
+    "https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish"
+  );
 });
 app.get("/public/app.js", (req, res) => {
   res.sendFile(`${__dirname}/public/app.js`);
@@ -97,17 +97,17 @@ io.on("connection", (socket) => {
             .get(record.channel)
             .send(
               "Someone joined on the web page (`!m-url`). Device information:" +
-              (browser.browser.name == null ?
-                "No browser detected" :
-                browser.browser.name) +
-              " on " +
-              (browser.os.name == null ? "No OS detected" : browser.os.name) +
-              " " +
-              (browser.os.versionName == null ?
-                browser.os.version == null ?
-                  "" :
-                  browser.os.version :
-                browser.os.versionName)
+                (browser.browser.name == null
+                  ? "No browser detected"
+                  : browser.browser.name) +
+                " on " +
+                (browser.os.name == null ? "No OS detected" : browser.os.name) +
+                " " +
+                (browser.os.versionName == null
+                  ? browser.os.version == null
+                    ? ""
+                    : browser.os.version
+                  : browser.os.versionName)
             );
         } else {
           socket.emit("error", "pwd_wrong");
@@ -120,14 +120,13 @@ io.on("connection", (socket) => {
     console.log("error");
   }
   socket.on("msg", (data) => {
-    console.log(data)
+    console.log(data);
     const regex = /^https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
     let url = socket.handshake.headers.referer;
     console.log(url);
     if (regex.test(socket.handshake.headers.referer)) {
-      let matches = /https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})/.exec(
-        url
-      );
+      let matches =
+        /https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})/.exec(url);
       let server_id = matches[1];
       let server_pwd = matches[2];
 
@@ -139,14 +138,13 @@ io.on("connection", (socket) => {
           if (record.pwd != null && record.pwd == server_pwd) {
             client.channels.cache
               .get(record.channel)
-              .send("Someone said: " + data)
+              .send("Someone said: " + data);
           }
         }
-      })
+      });
     }
-  })
+  });
 });
-
 
 // </socketIO>
 
@@ -158,17 +156,32 @@ client.once("ready", () => {
 client.on("guildCreate", (guild) => {
   let channel = client.channels.cache.get(guild.systemChannelID);
   channel.send("Hi @everyone, I'm **mirrorme**. *Currently under development*");
-  guild.roles.create({ data: { name: 'mirrorme_mod', permissions: [], color: 'BLACK' }, reason: 'Role is used to configure the mirrorme-bot' }).then(() => {
-    channel.send("I've just created the `mirrorme_mod` role. You are required to have this role or Admin status to use `!m-`commands. ")
-  }).catch(() => {
-    channel.send("I've just failed at creating the `mirrorme_mod` role. You are required to have this role or Admin status to use `!m-`commands. *Please add the role manually!* ")
-  });
+  guild.roles
+    .create({
+      data: { name: "mirrorme_mod", permissions: [], color: "BLACK" },
+      reason: "Role is used to configure the mirrorme-bot",
+    })
+    .then(() => {
+      channel.send(
+        "I've just created the `mirrorme_mod` role. You are required to have this role or Admin status to use `!m-`commands. "
+      );
+    })
+    .catch(() => {
+      channel.send(
+        "I've just failed at creating the `mirrorme_mod` role. You are required to have this role or Admin status to use `!m-`commands. *Please add the role manually!* "
+      );
+    });
 });
 client.on("message", (message) => {
   if (message.channel.type !== "dm" && !message.author.bot) {
-    if (message.member.hasPermission('ADMINISTRATOR') || message.member.roles.cache.some(role => role.name === 'mirrorme_mod')) {
+    if (
+      message.member.hasPermission("ADMINISTRATOR") ||
+      message.member.roles.cache.some((role) => role.name === "mirrorme_mod")
+    ) {
       if (message.content === "!m-start") {
-        message.channel.send("Theoretically started mirroring…");
+        let sentmsg = message.channel.send(
+          "Starting mirrorme for your server..."
+        );
         let a = getRnd(20);
 
         db.set(message.guild.id, {
@@ -179,13 +192,15 @@ client.on("message", (message) => {
         }).then(() => {
           message.channel.send(
             "Your link is: ||https://mirror.mopamo.repl.co/c/" +
-            message.guild.id +
-            "/" +
-            a +
-            " || . Others are now able to watch your chat through this link. Type `!m-stop` to prevent that"
+              message.guild.id +
+              "/" +
+              a +
+              " || . Others are now able to watch your chat through this link. Type `!m-stop` to prevent that"
           );
-          message.guild.me.setNickname("Mirroring this server. (!m-url)")
-
+          sentmsg.then((sentm) => {
+            sentm.edit("Mirroring your server!");
+          });
+          message.guild.me.setNickname("Mirroring this server. (!m-url)");
         });
       } else if (message.content === "!m-ping") {
         message.channel.send(
@@ -198,65 +213,94 @@ client.on("message", (message) => {
       } else if (message.content === "!m-url") {
         db.get(message.guild.id).then((val) => {
           if (val != null && val.pwd != null) {
-            message.channel.send(`|| https://mirror.mopamo.repl.co/c/${message.guild.id}/${val.pwd} ||`);
+            message.channel.send(
+              `|| https://mirror.mopamo.repl.co/c/${message.guild.id}/${val.pwd} ||`
+            );
           }
         });
       } else if (message.content === "!m-stop") {
         db.get(message.guild.id).then((val) => {
-
           if (val) {
-
             message.channel.send("Created at " + val.created);
 
             db.delete(message.guild.id).then(() => {
-              message.channel.send("We've deleted your data and stopped mirroring");
-              message.guild.me.setNickname("MirrorMe - type !m-help for help")
+              message.channel.send(
+                "We've deleted your data and stopped mirroring"
+              );
+              message.guild.me.setNickname("MirrorMe - type !m-help for help");
             });
           } else {
-            message.channel.send("Looks like we didn't activly mirrored this server 🤷. If you want to do that, type `!m-start`");
+            message.channel.send(
+              "Looks like we didn't activly mirrored this server 🤷. If you want to do that, type `!m-start`"
+            );
           }
         });
-      }
-
-      else if (message.content === "!m-leave") {
-        if (message.member.hasPermission('ADMINISTRATOR') || member.roles.cache.some(role => role.name === 'mirrorme_mod')) {
+      } else if (message.content === "!m-leave") {
+        if (
+          message.member.hasPermission("ADMINISTRATOR") ||
+          member.roles.cache.some((role) => role.name === "mirrorme_mod")
+        ) {
           db.delete(message.guild.id).then(() => {
-            let mainchannel = client.channels.cache.get(message.guild.systemChannelID);
+            let mainchannel = client.channels.cache.get(
+              message.guild.systemChannelID
+            );
 
             const exampleEmbed = new Discord.MessageEmbed()
-              .setColor('#0099ff')
+              .setColor("#0099ff")
               .setTitle("I'm leaving this server! Bye 👋")
-              .setURL(`https://discordapp.com/channels/${message.guild.id}/${message.channel.id}/${message.id}>`)
-              .setAuthor(message.author.username, message.author.avatarURL()).addFields(
-                { name: 'What', value: ':white_check_mark: Delete all data from our DB', inline: true },
-                { name: "I'm", value: ':white_check_mark: Remove `mirrorme_mod`-role', inline: true },
-                { name: 'doing:', value: ':white_check_mark: Remove myself', inline: true },
+              .setURL(
+                `https://discordapp.com/channels/${message.guild.id}/${message.channel.id}/${message.id}>`
               )
-              .addField('If you miss me, you can invite me again: ', `    
+              .setAuthor(message.author.username, message.author.avatarURL())
+              .addFields(
+                {
+                  name: "What",
+                  value: ":white_check_mark: Delete all data from our DB",
+                  inline: true,
+                },
+                {
+                  name: "I'm",
+                  value: ":white_check_mark: Remove `mirrorme_mod`-role",
+                  inline: true,
+                },
+                {
+                  name: "doing:",
+                  value: ":white_check_mark: Remove myself",
+                  inline: true,
+                }
+              )
+              .addField(
+                "If you miss me, you can invite me again: ",
+                `    
 
-<https://mirror.mopamo.repl.co/add>`)
+<https://mirror.mopamo.repl.co/add>`
+              )
               .setTimestamp()
-              .setFooter(`Caused through !m-leave by @${message.author.username}`);
+              .setFooter(
+                `Caused through !m-leave by @${message.author.username}`
+              );
 
             mainchannel.send(exampleEmbed);
 
-            let role = message.guild.roles.cache.find(role => role.name === "mirrorme_mod");
-            console.log(role)
+            let role = message.guild.roles.cache.find(
+              (role) => role.name === "mirrorme_mod"
+            );
+            console.log(role);
             if (role) {
-              role.delete("Since mirrorme left, there's no use for this role. Invite again: https://mirror.mopamo.repl.co/add")
+              role.delete(
+                "Since mirrorme left, there's no use for this role. Invite again: https://mirror.mopamo.repl.co/add"
+              );
             }
-            console.log(role)
-            message.react("🍃")
+            console.log(role);
+            message.react("🍃");
             message.guild.leave();
-          })
+          });
         } else {
-
-          message.reply("sorry, you don't have the permission to remove me. Ask an admin to do so!")
+          message.reply(
+            "sorry, you don't have the permission to remove me. Ask an admin to do so!"
+          );
         }
-      }
-
-      else {
-
+      } else {
         db.get(message.guild.id).then((response) => {
           if (response) {
             message.react("👁");
@@ -271,15 +315,14 @@ client.on("message", (message) => {
           }
         });
       }
+    } else {
+      //no permission
+
+      message.reply(
+        "sorry, you're required to have admin privileges /  the `mirrorme_mod` role to use me ☹️"
+      );
     }
-    else {
-
-      //no permission 
-
-      message.reply("sorry, you're required to have admin privileges /  the `mirrorme_mod` role to use me ☹️")
-    }
-  }//end 
-
+  } //end
   else {
     //DM
     if (!message.author.bot) {
@@ -293,7 +336,7 @@ client.on("message", (message) => {
 server.listen(3000, () => {
   console.log("listening on *:3000");
 });
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.status(404).sendFile(`${__dirname}/views/404.html`);
 });
 client.login(process.env["dctoken"]);
