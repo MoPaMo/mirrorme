@@ -43,9 +43,11 @@ fetch("https://api.github.com/users/MoPaMo/events", {
         </h5>
         <span class="is-size-7 has-text-weight-light"><span class="icon">
         <i class="icon-time"></i>
-      </span>${data[i].created_at ? getD(data[i].created_at) : "no date provided :("
-          }</span><br/><div class="is-size-6 is-size-5-widescreen">${b.message
-          }</div>`;
+      </span>${
+        data[i].created_at ? getD(data[i].created_at) : "no date provided :("
+      }</span><br/><div class="is-size-6 is-size-5-widescreen">${
+          b.message
+        }</div>`;
       console.log(a);
       c.innerHTML = a.toString();
     }

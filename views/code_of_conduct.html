@@ -1,225 +1,367 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A discord bot to mirror all the messages of your server to the web!"
+    />
+    <meta
+      name="keywords"
+      content="discord, bot, open source, MIT>, mirror, web, server, automatic"
+    />
+    <title>mirrorme | a discord bot</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/icons.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A discord bot to mirror all the messages of your server to the web!">
-  <meta name="keywords" content="discord, bot, open source, MIT>, mirror, web, server, automatic">
-  <title>mirrorme | a discord bot</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-  <link rel="stylesheet" href="/icons.css">
+    <link rel="icon" type="image/svg+xml" href="/ico.svg" />
+    <link rel="alternate icon" href="/fav.ico" />
+    <link rel="mask-icon" href="/ico.svg" color="#000" />
+  </head>
 
-  <link rel="icon" type="image/svg+xml" href="/ico.svg">
-  <link rel="alternate icon" href="/fav.ico">
-  <link rel="mask-icon" href="/ico.svg" color="#000">
-</head>
+  <body>
+    <nav
+      class="navbar is-info is-fixed-top"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item title" href="https://mirror.mopamo.repl.co">
+          mirrorme
+        </a>
 
-<body>
-  <nav class="navbar is-info is-fixed-top" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item title" href="https://mirror.mopamo.repl.co">
-        mirrorme </a>
-
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="/#about"> About </a>
-        <a class="navbar-item" href="/docs"> Docs </a>
-        <a class="navbar-item" href="/tos">Code of conduct</a>
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
 
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary"
-              href="/add">
-              <strong>Invite</strong>
-            </a>
-            <a class="button is-light" target="_blank" href="https://github.com/MoPaMo/mirrorme">Contribute</a>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/#about"> About </a>
+          <a class="navbar-item" href="/docs"> Docs </a>
+          <a class="navbar-item" href="/tos">Code of conduct</a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary" href="/add">
+                <strong>Invite</strong>
+              </a>
+              <a
+                class="button is-light"
+                target="_blank"
+                href="https://github.com/MoPaMo/mirrorme"
+                >Contribute</a
+              >
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
-  <br /><br />
-  <section class="section">
-    <div class="container">
-
-      <h1 class="title">
-        mirrorme
-      </h1>
-      <p class="subtitle">
-        We want mirrorme to contribute to an open community. To prevent abuse, we have written these community
-        guidelines:
-      </p>
-    </div>
-  </section>
-  <section class="content section">
-    <h1 id="citizen-code-of-conduct">Citizen Code of Conduct</h1>
-    <h2 id="1-purpose">1. Purpose</h2>
-    <p>A primary goal of erratic-energetic-thistle is to be inclusive to the largest number of contributors, with the
-      most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and
-      welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status,
-      and religion (or lack thereof).</p>
-    <p>This code of conduct outlines our expectations for all those who participate in our community, as well as the
-      consequences for unacceptable behavior.</p>
-    <p>We invite all those who participate in erratic-energetic-thistle to help us create safe and positive experiences
-      for everyone.</p>
-    <h2 id="2-open-source-culture-tech-citizenship">2. Open [Source/Culture/Tech] Citizenship</h2>
-    <p>A supplemental goal of this Code of Conduct is to increase open [source/culture/tech] citizenship by encouraging
-      participants to recognize and strengthen the relationships between our actions and their effects on our community.
-    </p>
-    <p>Communities mirror the societies in which they exist and positive action is essential to counteract the many
-      forms of inequality and abuses of power that exist in society.</p>
-    <p>If you see someone who is making an extra effort to ensure our community is welcoming, friendly, and encourages
-      all participants to contribute to the fullest extent, we want to know.</p>
-    <h2 id="3-expected-behavior">3. Expected Behavior</h2>
-    <p>The following behaviors are expected and requested of all community members:</p>
-    <ul>
-      <li>Participate in an authentic and active way. In doing so, you contribute to the health and longevity of this
-        community.</li>
-      <li>Exercise consideration and respect in your speech and actions.</li>
-      <li>Attempt collaboration before conflict.</li>
-      <li>Refrain from demeaning, discriminatory, or harassing behavior and speech.</li>
-      <li>Be mindful of your surroundings and of your fellow participants. Alert community leaders if you notice a
-        dangerous situation, someone in distress, or violations of this Code of Conduct, even if they seem
-        inconsequential.</li>
-      <li>Remember that community event venues may be shared with members of the public; please be respectful to all
-        patrons of these locations.</li>
-    </ul>
-    <h2 id="4-unacceptable-behavior">4. Unacceptable Behavior</h2>
-    <p>The following behaviors are considered harassment and are unacceptable within our community:</p>
-    <ul>
-      <li>Violence, threats of violence or violent language directed against another person.</li>
-      <li>Sexist, racist, homophobic, transphobic, ableist or otherwise discriminatory jokes and language.</li>
-      <li>Posting or displaying sexually explicit or violent material.</li>
-      <li>Posting or threatening to post other people&#39;s personally identifying information (&quot;doxing&quot;).
-      </li>
-      <li>Personal insults, particularly those related to gender, sexual orientation, race, religion, or disability.
-      </li>
-      <li>Inappropriate photography or recording.</li>
-      <li>Inappropriate physical contact. You should have someone&#39;s consent before touching them.</li>
-      <li>Unwelcome sexual attention. This includes, sexualized comments or jokes; inappropriate touching, groping, and
-        unwelcomed sexual advances.</li>
-      <li>Deliberate intimidation, stalking or following (online or in person).</li>
-      <li>Advocating for, or encouraging, any of the above behavior.</li>
-      <li>Sustained disruption of community events, including talks and presentations.</li>
-    </ul>
-    <h2 id="5-weapons-policy">5. Weapons Policy</h2>
-    <p>No weapons will be allowed at erratic-energetic-thistle events, community spaces, or in other spaces covered by
-      the scope of this Code of Conduct. Weapons include but are not limited to guns, explosives (including fireworks),
-      and large knives such as those used for hunting or display, as well as any other item used for the purpose of
-      causing injury or harm to others. Anyone seen in possession of one of these items will be asked to leave
-      immediately, and will only be allowed to return without the weapon. Community members are further expected to
-      comply with all state and local laws on this matter.</p>
-    <h2 id="6-consequences-of-unacceptable-behavior">6. Consequences of Unacceptable Behavior</h2>
-    <p>Unacceptable behavior from any community member, including sponsors and those with decision-making authority,
-      will not be tolerated.</p>
-    <p>Anyone asked to stop unacceptable behavior is expected to comply immediately.</p>
-    <p>If a community member engages in unacceptable behavior, the community organizers may take any action they deem
-      appropriate, up to and including a temporary ban or permanent expulsion from the community without warning (and
-      without refund in the case of a paid event).</p>
-    <h2 id="7-reporting-guidelines">7. Reporting Guidelines</h2>
-    <p>If you are subject to or witness unacceptable behavior, or have any other concerns, please notify a community
-      organizer as soon as possible. [CONTACT_INFO_HERE].</p>
-    <p>[LINK_TO_REPORTING_GUIDELINES]</p>
-    <p>Additionally, community organizers are available to help community members engage with local law enforcement or
-      to otherwise help those experiencing unacceptable behavior feel safe. In the context of in-person events,
-      organizers will also provide escorts as desired by the person experiencing distress.</p>
-    <h2 id="8-addressing-grievances">8. Addressing Grievances</h2>
-    <p>If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify
-      mpm1301@web.de with a concise description of your grievance. Your grievance will be handled in accordance with our
-      existing governing policies. [LINK_TO_POLICY]</p>
-    <p>[NOTE: Every organization&#39;s governing policies should dictate how you handle warnings and expulsions of
-      community members. It is strongly recommended that you mention those policies here or in Section 7 and that you
-      include a mechanism for addressing grievances.]</p>
-    <h2 id="9-scope">9. Scope</h2>
-    <p>We expect all community participants (contributors, paid or otherwise; sponsors; and other guests) to abide by
-      this Code of Conduct in all community venues--online and in-person--as well as in all one-on-one communications
-      pertaining to community business.</p>
-    <p>This code of conduct and its related procedures also applies to unacceptable behavior occurring outside the scope
-      of community activities when such behavior has the potential to adversely affect the safety and well-being of
-      community members.</p>
-    <h2 id="10-contact-info">10. Contact info</h2>
-    <p>[YOUR_CONTACT_INFO_HERE -- this should be a single person or a small team who can respond to issues directly]</p>
-    <h2 id="11-license-and-attribution">11. License and attribution</h2>
-    <p>The Citizen Code of Conduct is distributed by <a href="http://stumptownsyndicate.org">Stumptown Syndicate</a>
-      under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike
-        license</a>. </p>
-    <p>Portions of text derived from the <a href="https://www.djangoproject.com/conduct/">Django Code of Conduct</a> and
-      the <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">Geek Feminism Anti-Harassment
-        Policy</a>.</p>
-    <p><em>Revision 2.3. Posted 6 March 2017.</em></p>
-    <p><em>Revision 2.2. Posted 4 February 2016.</em></p>
-    <p><em>Revision 2.1. Posted 23 June 2014.</em></p>
-    <p><em>Revision 2.0, adopted by the <a href="http://stumptownsyndicate.org">Stumptown Syndicate</a> board on 10
-        January 2013. Posted 17 March 2013.</em></p>
-
-  </section>
-
-
-
-  <footer class="footer">
-    <div class="content has-text-centered">
+    </nav>
+    <br /><br />
+    <section class="section">
+      <div class="container">
+        <h1 class="title">mirrorme</h1>
+        <p class="subtitle">
+          We want mirrorme to contribute to an open community. To prevent abuse,
+          we have written these community guidelines:
+        </p>
+      </div>
+    </section>
+    <section class="content section">
+      <h1 id="citizen-code-of-conduct">Citizen Code of Conduct</h1>
+      <h2 id="1-purpose">1. Purpose</h2>
       <p>
-        <strong>mirrorme</strong> by <a href="https://mopamo.github.io">MoPaMo</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+        A primary goal of erratic-energetic-thistle is to be inclusive to the
+        largest number of contributors, with the most varied and diverse
+        backgrounds possible. As such, we are committed to providing a friendly,
+        safe and welcoming environment for all, regardless of gender, sexual
+        orientation, ability, ethnicity, socioeconomic status, and religion (or
+        lack thereof).
       </p>
-      <div class="columns">
-        <div class="column">
-          <a href="/add"
-            class="has-text-dark button is-light">Invite mirrorme</a>
-        </div>
-        <div class="column">
-          <a href="/docs" class="has-text-dark">Docs</a><br />
-          <a href="https://github.com/MoPaMo/mirrorme" class="has-text-dark"><span class="icon">
-              <i class="icon-github"></i>
-            </span>GitHub</a>
-        </div>
-        <div class="column">
-          <a href="/license" class="has-text-dark">License</a> <br />
-          <a href="/tos" class="has-text-dark">Code of Conduct</a>
-        </div>
-        <div class="column">
-          <a href="https://stats.uptimerobot.com/BErLNFVkyE" class="has-text-dark">Status</a> <br />
-          <a href="https://replit.com" class="has-text-dark">Hosted on replit.com</a>
+      <p>
+        This code of conduct outlines our expectations for all those who
+        participate in our community, as well as the consequences for
+        unacceptable behavior.
+      </p>
+      <p>
+        We invite all those who participate in erratic-energetic-thistle to help
+        us create safe and positive experiences for everyone.
+      </p>
+      <h2 id="2-open-source-culture-tech-citizenship">
+        2. Open [Source/Culture/Tech] Citizenship
+      </h2>
+      <p>
+        A supplemental goal of this Code of Conduct is to increase open
+        [source/culture/tech] citizenship by encouraging participants to
+        recognize and strengthen the relationships between our actions and their
+        effects on our community.
+      </p>
+      <p>
+        Communities mirror the societies in which they exist and positive action
+        is essential to counteract the many forms of inequality and abuses of
+        power that exist in society.
+      </p>
+      <p>
+        If you see someone who is making an extra effort to ensure our community
+        is welcoming, friendly, and encourages all participants to contribute to
+        the fullest extent, we want to know.
+      </p>
+      <h2 id="3-expected-behavior">3. Expected Behavior</h2>
+      <p>
+        The following behaviors are expected and requested of all community
+        members:
+      </p>
+      <ul>
+        <li>
+          Participate in an authentic and active way. In doing so, you
+          contribute to the health and longevity of this community.
+        </li>
+        <li>Exercise consideration and respect in your speech and actions.</li>
+        <li>Attempt collaboration before conflict.</li>
+        <li>
+          Refrain from demeaning, discriminatory, or harassing behavior and
+          speech.
+        </li>
+        <li>
+          Be mindful of your surroundings and of your fellow participants. Alert
+          community leaders if you notice a dangerous situation, someone in
+          distress, or violations of this Code of Conduct, even if they seem
+          inconsequential.
+        </li>
+        <li>
+          Remember that community event venues may be shared with members of the
+          public; please be respectful to all patrons of these locations.
+        </li>
+      </ul>
+      <h2 id="4-unacceptable-behavior">4. Unacceptable Behavior</h2>
+      <p>
+        The following behaviors are considered harassment and are unacceptable
+        within our community:
+      </p>
+      <ul>
+        <li>
+          Violence, threats of violence or violent language directed against
+          another person.
+        </li>
+        <li>
+          Sexist, racist, homophobic, transphobic, ableist or otherwise
+          discriminatory jokes and language.
+        </li>
+        <li>Posting or displaying sexually explicit or violent material.</li>
+        <li>
+          Posting or threatening to post other people&#39;s personally
+          identifying information (&quot;doxing&quot;).
+        </li>
+        <li>
+          Personal insults, particularly those related to gender, sexual
+          orientation, race, religion, or disability.
+        </li>
+        <li>Inappropriate photography or recording.</li>
+        <li>
+          Inappropriate physical contact. You should have someone&#39;s consent
+          before touching them.
+        </li>
+        <li>
+          Unwelcome sexual attention. This includes, sexualized comments or
+          jokes; inappropriate touching, groping, and unwelcomed sexual
+          advances.
+        </li>
+        <li>
+          Deliberate intimidation, stalking or following (online or in person).
+        </li>
+        <li>Advocating for, or encouraging, any of the above behavior.</li>
+        <li>
+          Sustained disruption of community events, including talks and
+          presentations.
+        </li>
+      </ul>
+      <h2 id="5-weapons-policy">5. Weapons Policy</h2>
+      <p>
+        No weapons will be allowed at erratic-energetic-thistle events,
+        community spaces, or in other spaces covered by the scope of this Code
+        of Conduct. Weapons include but are not limited to guns, explosives
+        (including fireworks), and large knives such as those used for hunting
+        or display, as well as any other item used for the purpose of causing
+        injury or harm to others. Anyone seen in possession of one of these
+        items will be asked to leave immediately, and will only be allowed to
+        return without the weapon. Community members are further expected to
+        comply with all state and local laws on this matter.
+      </p>
+      <h2 id="6-consequences-of-unacceptable-behavior">
+        6. Consequences of Unacceptable Behavior
+      </h2>
+      <p>
+        Unacceptable behavior from any community member, including sponsors and
+        those with decision-making authority, will not be tolerated.
+      </p>
+      <p>
+        Anyone asked to stop unacceptable behavior is expected to comply
+        immediately.
+      </p>
+      <p>
+        If a community member engages in unacceptable behavior, the community
+        organizers may take any action they deem appropriate, up to and
+        including a temporary ban or permanent expulsion from the community
+        without warning (and without refund in the case of a paid event).
+      </p>
+      <h2 id="7-reporting-guidelines">7. Reporting Guidelines</h2>
+      <p>
+        If you are subject to or witness unacceptable behavior, or have any
+        other concerns, please notify a community organizer as soon as possible.
+        [CONTACT_INFO_HERE].
+      </p>
+      <p>[LINK_TO_REPORTING_GUIDELINES]</p>
+      <p>
+        Additionally, community organizers are available to help community
+        members engage with local law enforcement or to otherwise help those
+        experiencing unacceptable behavior feel safe. In the context of
+        in-person events, organizers will also provide escorts as desired by the
+        person experiencing distress.
+      </p>
+      <h2 id="8-addressing-grievances">8. Addressing Grievances</h2>
+      <p>
+        If you feel you have been falsely or unfairly accused of violating this
+        Code of Conduct, you should notify mpm1301@web.de with a concise
+        description of your grievance. Your grievance will be handled in
+        accordance with our existing governing policies. [LINK_TO_POLICY]
+      </p>
+      <p>
+        [NOTE: Every organization&#39;s governing policies should dictate how
+        you handle warnings and expulsions of community members. It is strongly
+        recommended that you mention those policies here or in Section 7 and
+        that you include a mechanism for addressing grievances.]
+      </p>
+      <h2 id="9-scope">9. Scope</h2>
+      <p>
+        We expect all community participants (contributors, paid or otherwise;
+        sponsors; and other guests) to abide by this Code of Conduct in all
+        community venues--online and in-person--as well as in all one-on-one
+        communications pertaining to community business.
+      </p>
+      <p>
+        This code of conduct and its related procedures also applies to
+        unacceptable behavior occurring outside the scope of community
+        activities when such behavior has the potential to adversely affect the
+        safety and well-being of community members.
+      </p>
+      <h2 id="10-contact-info">10. Contact info</h2>
+      <p>
+        [YOUR_CONTACT_INFO_HERE -- this should be a single person or a small
+        team who can respond to issues directly]
+      </p>
+      <h2 id="11-license-and-attribution">11. License and attribution</h2>
+      <p>
+        The Citizen Code of Conduct is distributed by
+        <a href="http://stumptownsyndicate.org">Stumptown Syndicate</a> under a
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/"
+          >Creative Commons Attribution-ShareAlike license</a
+        >.
+      </p>
+      <p>
+        Portions of text derived from the
+        <a href="https://www.djangoproject.com/conduct/"
+          >Django Code of Conduct</a
+        >
+        and the
+        <a
+          href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy"
+          >Geek Feminism Anti-Harassment Policy</a
+        >.
+      </p>
+      <p><em>Revision 2.3. Posted 6 March 2017.</em></p>
+      <p><em>Revision 2.2. Posted 4 February 2016.</em></p>
+      <p><em>Revision 2.1. Posted 23 June 2014.</em></p>
+      <p>
+        <em
+          >Revision 2.0, adopted by the
+          <a href="http://stumptownsyndicate.org">Stumptown Syndicate</a> board
+          on 10 January 2013. Posted 17 March 2013.</em
+        >
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>mirrorme</strong> by
+          <a href="https://mopamo.github.io">MoPaMo</a>. The source code is
+          licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+        </p>
+        <div class="columns">
+          <div class="column">
+            <a href="/add" class="has-text-dark button is-light"
+              >Invite mirrorme</a
+            >
+          </div>
+          <div class="column">
+            <a href="/docs" class="has-text-dark">Docs</a><br />
+            <a href="https://github.com/MoPaMo/mirrorme" class="has-text-dark"
+              ><span class="icon">
+                <i class="icon-github"></i> </span
+              >GitHub</a
+            >
+          </div>
+          <div class="column">
+            <a href="/license" class="has-text-dark">License</a> <br />
+            <a href="/tos" class="has-text-dark">Code of Conduct</a>
+          </div>
+          <div class="column">
+            <a
+              href="https://stats.uptimerobot.com/BErLNFVkyE"
+              class="has-text-dark"
+              >Status</a
+            >
+            <br />
+            <a href="https://replit.com" class="has-text-dark"
+              >Hosted on replit.com</a
+            >
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0
+        );
 
-      // Get all "navbar-burger" elements
-      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+          // Add a click event on each of them
+          $navbarBurgers.forEach((el) => {
+            el.addEventListener("click", () => {
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
 
-      // Check if there are any navbar burgers
-      if ($navbarBurgers.length > 0) {
-
-        // Add a click event on each of them
-        $navbarBurgers.forEach(el => {
-          el.addEventListener('click', () => {
-
-            // Get the target from the "data-target" attribute
-            const target = el.dataset.target;
-            const $target = document.getElementById(target);
-
-            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-            el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
-
+              // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle("is-active");
+              $target.classList.toggle("is-active");
+            });
           });
-        });
-      }
-
-    });</script>
-<img src="https://app.piratepx.com/ship?p=7d6c6d33-0a28-4aea-b3cb-a3daf6e5dd98&i=tos"  alt="Hi, I'm a pixel.I don't collect any identifiable data :)" /></body>
-
+        }
+      });
+    </script>
+    <img
+      src="https://app.piratepx.com/ship?p=7d6c6d33-0a28-4aea-b3cb-a3daf6e5dd98&i=tos"
+      alt="Hi, I'm a pixel.I don't collect any identifiable data :)"
+    />
+  </body>
 </html>
