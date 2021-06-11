@@ -33,13 +33,13 @@ fetch("https://api.github.com/repos/MoPaMo/mirrorme/events", {
     let parent = document.getElementById("col"); //.innerHTML=data
     console.log(data);
     for (let i = 0; i < 3; i++) {
-      let b = data[i].payload.commits[0],
+      let b = data[i].payload.commits[data[i].payload.commits.length - 1],
         c = parent.children[i].children[0],
         a = `
           <h5 class=" is-size-7 has-text-weight-bold">
           <span class="icon">
             <i class="icon icon-book"></i>
-          </span> ${data[i].repo.name}
+          </span> ${data[i].actor.login}
         </h5>
         <span class="is-size-7 has-text-weight-light"><span class="icon">
         <i class="icon-time"></i>
