@@ -23,7 +23,7 @@ const getD = (previous) => {
   }
 };
 
-fetch("https://api.github.com/users/MoPaMo/events", {
+fetch("https://api.github.com/repos/MoPaMo/mirrorme/events", {
   method: "get",
 })
   .then((response) => response.json())
