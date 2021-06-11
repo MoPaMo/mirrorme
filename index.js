@@ -339,4 +339,7 @@ server.listen(3000, () => {
 app.use(function (req, res, next) {
   res.status(404).sendFile(`${__dirname}/views/404.html`);
 });
-client.login(process.env["dctoken"]);
+client.login(process.env["dctoken"]).catch((a)=>{
+  console.log("Error signing in")
+  console.log(a)
+});
