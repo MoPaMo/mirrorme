@@ -300,6 +300,34 @@ client.on("message", (message) => {
             "sorry, you don't have the permission to remove me. Ask an admin to do so!"
           );
         }
+      } else if (message.content === "!m-help") {
+        const emb = new Discord.MessageEmbed()
+          .setColor("#0099ff")
+          .setTitle("MirrorMe Help")
+          .setURL(`https://mirror.mopamo.repl.co/docs`)
+          .setAuthor(client.user.username, client.user.avatarURL())
+          .addFields(
+            {
+              name: "!m-start",
+              value: "Starts the mirroring. You will get the URl in exchange!",
+              inline: true,
+            },
+            {
+              name: "!m-stop",
+              value:
+                "Stop ,the mirroring, delete all data and kick active browser users",
+              inline: true,
+            },
+            {
+              name: "!m-url",
+              value:
+                "Get current mirroring URl (obviously only works if mirroring is enabled)",
+              inline: true,
+            }
+          )
+          .setTimestamp()
+          .setFooter(`Check out our docs site for better help`);
+        message.channel.send(emb);
       } else {
         db.get(message.guild.id).then((response) => {
           if (response) {
@@ -339,7 +367,7 @@ server.listen(3000, () => {
 app.use(function (req, res, next) {
   res.status(404).sendFile(`${__dirname}/views/404.html`);
 });
-client.login(process.env["dctoken"]).catch((a)=>{
-  console.log("Error signing in")
-  console.log(a)
+client.login(process.env["dctoken"]).catch((a) => {
+  console.log("Error signing in");
+  console.log(a);
 });
