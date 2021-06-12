@@ -326,7 +326,7 @@ client.on("message", (message) => {
             }
           )
           .setTimestamp()
-          .setFooter(`Check out our docs site for better help`);
+          .setFooter(`Check out our docs site for better help: https://mirror.mopamo.repl.co/docs`);
         message.channel.send(emb);
       } else {
         db.get(message.guild.id).then((response) => {
