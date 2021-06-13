@@ -190,7 +190,7 @@ client.on("message", (message) => {
           created: new Date(),
           name: message.author.id,
         }).then(() => {
-          message.channel.send(
+          client.users.cache.get(message.author.id).send(
             "Your link is: ||https://mirror.mopamo.repl.co/c/" +
               message.guild.id +
               "/" +
@@ -213,7 +213,8 @@ client.on("message", (message) => {
       } else if (message.content === "!m-url") {
         db.get(message.guild.id).then((val) => {
           if (val != null && val.pwd != null) {
-            message.channel.send(
+            //dm
+            client.users.cache.get(message.author.id).send(
               `|| https://mirror.mopamo.repl.co/c/${message.guild.id}/${val.pwd} ||`
             );
           }
