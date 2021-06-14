@@ -52,6 +52,12 @@ app.get("/public/vue.global.js", (req, res) => {
 app.get("/tos", (req, res) => {
   res.sendFile(`${__dirname}/views/code_of_conduct.html`);
 });
+app.get("/code-of-conduct", (req, res) => {
+  res.sendFile(`${__dirname}/views/code_of_conduct.html`);
+});
+app.get("/code_of_conduct", (req, res) => {
+  res.sendFile(`${__dirname}/views/code_of_conduct.html`);
+});
 app.get("/finish", (req, res) => {
   res.sendFile(`${__dirname}/views/finish.html`);
 });
