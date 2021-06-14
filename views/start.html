@@ -131,7 +131,10 @@
     <section class="section">
       <div class="container">
         <h3 class="title is-size-4">Old fashioned?</h3>
-        <h4>If you don't have a link, you can also type the server details in here by hand, but it's a lot of work!</h4>
+        <h4>
+          If you don't have a link, you can also type the server details in here
+          by hand, but it's a lot of work!
+        </h4>
         <form method="POST" action="/app-fwd/">
           <div class="field">
             <label class="label">Server ID</label>
@@ -156,6 +159,14 @@
               />
             </div>
           </div>
+          <div class="field is-grouped">
+            <p class="control">
+              <input type="submit" class="button is-primary" />
+            </p>
+            <p class="control">
+              <input type="reset" class="button is-danger is-inverted" />
+            </p>
+          </div>
         </form>
       </div>
     </section>
@@ -167,14 +178,17 @@
             Just <a href="/add">invite</a> MirrorMe to your server and it will
             do all the setup!
           </p>
-          <p> <a
-            rel="noopener"
-            href="/add"
-            class="button is-info is-medium"
-          >&rarr; Get started</a></p>
+          <p>
+            <a rel="noopener" href="/add" class="button is-info is-medium"
+              >&rarr; Get started</a
+            >
+          </p>
         </div>
         <div class="column is-one-third">
-          <img src="/mirrorme-showoff.svg" alt="Image showing discord login and mirrorme arriving at the server" />
+          <img
+            src="/mirrorme-showoff.svg"
+            alt="Image showing discord login and mirrorme arriving at the server"
+          />
         </div>
       </div>
     </section>
