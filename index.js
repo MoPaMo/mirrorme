@@ -72,7 +72,7 @@ app.get("/c/:server/:pwd", (req, res) => {
 io.on("connection", (socket) => {
   const regex = /^https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
   let url = socket.handshake.headers.referer;
-  console.log(url);
+  //console.log(url);
   if (regex.test(socket.handshake.headers.referer)) {
     let matches = /https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})/.exec(
       url
@@ -86,13 +86,13 @@ io.on("connection", (socket) => {
       } else {
         //record found
         if (record.pwd != null && record.pwd == server_pwd) {
-          console.log("Signed in");
+          //console.log("Signed in");
           socket.join(server_id + "/" + record.pwd);
           io.to(server_id + "/" + record.pwd).emit("sys", "someone joined");
           let agent = socket.handshake.headers["user-agent"];
           let browser = Bowser.parse(agent);
-          console.log(browser);
-          console.log(server_id + "/" + record.pwd);
+          //console.log(browser);
+          //console.log(server_id + "/" + record.pwd);
           client.channels.cache
             .get(record.channel)
             .send(
@@ -113,17 +113,17 @@ io.on("connection", (socket) => {
           socket.emit("error", "pwd_wrong");
         }
       }
-      console.log(record);
+      //console.log(record);
     });
   } else {
     socket.emit("error", "url_error");
-    console.log("error");
+    //console.log("error");
   }
   socket.on("msg", (data) => {
-    console.log(data);
+    //console.log(data);
     const regex = /^https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
     let url = socket.handshake.headers.referer;
-    console.log(url);
+    //console.log(url);
     if (regex.test(socket.handshake.headers.referer)) {
       let matches =
         /https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})/.exec(url);
@@ -286,13 +286,13 @@ client.on("message", (message) => {
             let role = message.guild.roles.cache.find(
               (role) => role.name === "mirrorme_mod"
             );
-            console.log(role);
+            //console.log(role);
             if (role) {
               role.delete(
                 "Since mirrorme left, there's no use for this role. Invite again: https://mirror.mopamo.repl.co/add"
               );
             }
-            console.log(role);
+            //console.log(role);
             message.react("🍃");
             message.guild.leave();
           });
@@ -333,7 +333,7 @@ client.on("message", (message) => {
         db.get(message.guild.id).then((response) => {
           if (response) {
             message.react("👁");
-            console.log(message.guild.id + "/" + response.pwd);
+            //console.log(message.guild.id + "/" + response.pwd);
             io.to(message.guild.id + "/" + response.pwd).emit("msg", {
               author: message.author.username,
               text: message.content,
