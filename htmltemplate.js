@@ -75,7 +75,7 @@ module.exports = {
           <a href="/tos" class="has-text-dark">Code of Conduct</a>
         </div>
         <div class="column">
-          <a href="https://stats.uptimerobot.com/BErLNFVkyE/787978795BErLNFVkyE" class="has-text-dark">Status</a> <br />
+          <a href="https://stats.uptimerobot.com/BErLNFVkyE/787978795" class="has-text-dark">Status</a> <br />
           <a href="https://replit.com" class="has-text-dark">Hosted on replit.com</a>
         </div>
       </div>
