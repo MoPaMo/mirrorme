@@ -210,7 +210,7 @@ client.on("message", (message) => {
         });
       } else if (message.content === "!m-ping") {
         message.channel.send(
-          "I'm online! You can view my status here: https://stats.uptimerobot.com/BErLNFVkyE"
+          "I'm online! You can view my status here: https://stats.uptimerobot.com/BErLNFVkyE/787978795BErLNFVkyE"
         );
       } else if (message.content === "!m-info") {
         db.get(message.guild.id).then((val) => {

@@ -20,4 +20,4 @@ since mirrorme is open source we've got a GitHub repo, [you can check it here](h
 ### Hosting
 
 mirrorme is hosted on [replit](https://replit.com), an open-source hoster. You can view the project page [here](https://replit.com/@MoPaMo/mirror).
-We're tracking the uptime with [uptimerobot](https://uptimerobot.com) [(status page)](https://stats.uptimerobot.com/BErLNFVkyE)
+We're tracking the uptime with [uptimerobot](https://uptimerobot.com) [(status page)](https://stats.uptimerobot.com/BErLNFVkyE/787978795BErLNFVkyE)
