@@ -22,7 +22,6 @@ const getD = (previous) => {
     return "approximately " + Math.round(elapsed / msPerYear) + " y ago";
   }
 };
-
 fetch("https://api.github.com/repos/MoPaMo/mirrorme/events", {
   method: "get",
 })

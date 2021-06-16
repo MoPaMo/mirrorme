@@ -58,6 +58,12 @@ app.get("/code-of-conduct", (req, res) => {
 app.get("/code_of_conduct", (req, res) => {
   res.sendFile(`${__dirname}/views/code_of_conduct.html`);
 });
+app.get('/codeofconduct', function(req, res) {
+  res.redirect('/tos');
+});
+app.get('/gh', function(req, res) {
+res.redirect('https://github.com/MoPaMo/mirrorme');
+});
 app.get("/finish", (req, res) => {
   res.sendFile(`${__dirname}/views/finish.html`);
 });
@@ -278,7 +284,7 @@ client.on("message", (message) => {
               )
               .addField(
                 "If you miss me, you can invite me again: ",
-                `    
+                `
 
 <https://mirror.mopamo.repl.co/add>`
               )
