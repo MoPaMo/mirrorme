@@ -26,6 +26,7 @@ function getRnd(ind) {
   }
   return a;
 }
+const docpathes={"stage-vs-chat":"stage.html","stageVsChat":"stage.html","basics":"basics.html"}
 // <express>
 app.use(compression());
 app.use(express.static("public"));
@@ -70,7 +71,13 @@ app.post("/app-fwd", (req, res) => {
 app.get("/c/:server/:pwd", (req, res) => {
   res.sendFile(`${__dirname}/views/app.html`);
 });
-
+app.get("/docs", (req, res) => {
+  res.sendFile(`${__dirname}/views/docs/index.html`);
+});
+app.get("/docs/:name", (req, res) => {
+  let reallink=req.params.name in docpathes ?docpathes[req.params.name]:"404docs.html"
+  res.sendFile(`${__dirname}/views/docs/${reallink}`);
+});
 // </express>
 
 // <socketIO>
@@ -278,7 +285,7 @@ client.on("message", (message) => {
               )
               .addField(
                 "If you miss me, you can invite me again: ",
-                `    
+                `
 
 <https://mirror.mopamo.repl.co/add>`
               )
