@@ -1,0 +1,648 @@
+{
+  "@discordjs/collection@0.1.6": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/discordjs/collection",
+    "publisher": "Amish Shah",
+    "email": "amishshah.2k@gmail.com",
+    "path": "/home/runner/mirror/node_modules/@discordjs/collection",
+    "licenseFile": "/home/runner/mirror/node_modules/@discordjs/collection/LICENSE"
+  },
+  "@discordjs/form-data@3.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/form-data/form-data",
+    "publisher": "Felix Geisendörfer",
+    "email": "felix@debuggable.com",
+    "url": "http://debuggable.com/",
+    "path": "/home/runner/mirror/node_modules/@discordjs/form-data",
+    "licenseFile": "/home/runner/mirror/node_modules/@discordjs/form-data/License"
+  },
+  "@replit/database@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/replit/database-node",
+    "path": "/home/runner/mirror/node_modules/@replit/database",
+    "licenseFile": "/home/runner/mirror/node_modules/@replit/database/LICENSE"
+  },
+  "@types/component-emitter@1.2.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "/home/runner/mirror/node_modules/@types/component-emitter",
+    "licenseFile": "/home/runner/mirror/node_modules/@types/component-emitter/LICENSE"
+  },
+  "@types/cookie@0.4.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "/home/runner/mirror/node_modules/@types/cookie",
+    "licenseFile": "/home/runner/mirror/node_modules/@types/cookie/LICENSE"
+  },
+  "@types/cors@2.8.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "/home/runner/mirror/node_modules/@types/cors",
+    "licenseFile": "/home/runner/mirror/node_modules/@types/cors/LICENSE"
+  },
+  "@types/node@14.14.41": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "/home/runner/mirror/node_modules/@types/node",
+    "licenseFile": "/home/runner/mirror/node_modules/@types/node/LICENSE"
+  },
+  "abort-controller@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mysticatea/abort-controller",
+    "publisher": "Toru Nagashima",
+    "url": "https://github.com/mysticatea",
+    "path": "/home/runner/mirror/node_modules/abort-controller",
+    "licenseFile": "/home/runner/mirror/node_modules/abort-controller/LICENSE"
+  },
+  "accepts@1.3.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/accepts",
+    "path": "/home/runner/mirror/node_modules/accepts",
+    "licenseFile": "/home/runner/mirror/node_modules/accepts/LICENSE"
+  },
+  "array-flatten@1.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/blakeembrey/array-flatten",
+    "publisher": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me",
+    "path": "/home/runner/mirror/node_modules/array-flatten",
+    "licenseFile": "/home/runner/mirror/node_modules/array-flatten/LICENSE"
+  },
+  "asynckit@0.4.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/alexindigo/asynckit",
+    "publisher": "Alex Indigo",
+    "email": "iam@alexindigo.com",
+    "path": "/home/runner/mirror/node_modules/asynckit",
+    "licenseFile": "/home/runner/mirror/node_modules/asynckit/LICENSE"
+  },
+  "base64-arraybuffer@0.1.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/niklasvh/base64-arraybuffer",
+    "publisher": "Niklas von Hertzen",
+    "email": "niklasvh@gmail.com",
+    "url": "http://hertzen.com",
+    "path": "/home/runner/mirror/node_modules/base64-arraybuffer",
+    "licenseFile": "/home/runner/mirror/node_modules/base64-arraybuffer/LICENSE-MIT"
+  },
+  "base64id@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/faeldt/base64id",
+    "publisher": "Kristian Faeldt",
+    "email": "faeldt_kristian@cyberagent.co.jp",
+    "path": "/home/runner/mirror/node_modules/base64id",
+    "licenseFile": "/home/runner/mirror/node_modules/base64id/LICENSE"
+  },
+  "body-parser@1.19.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/expressjs/body-parser",
+    "path": "/home/runner/mirror/node_modules/body-parser",
+    "licenseFile": "/home/runner/mirror/node_modules/body-parser/LICENSE"
+  },
+  "bowser@2.11.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lancedikson/bowser",
+    "publisher": "Dustin Diaz",
+    "email": "dustin@dustindiaz.com",
+    "url": "http://dustindiaz.com",
+    "path": "/home/runner/mirror/node_modules/bowser",
+    "licenseFile": "/home/runner/mirror/node_modules/bowser/LICENSE"
+  },
+  "bytes@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/visionmedia/bytes.js",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "url": "http://tjholowaychuk.com",
+    "path": "/home/runner/mirror/node_modules/compression/node_modules/bytes",
+    "licenseFile": "/home/runner/mirror/node_modules/compression/node_modules/bytes/LICENSE"
+  },
+  "bytes@3.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/visionmedia/bytes.js",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "url": "http://tjholowaychuk.com",
+    "path": "/home/runner/mirror/node_modules/bytes",
+    "licenseFile": "/home/runner/mirror/node_modules/bytes/LICENSE"
+  },
+  "combined-stream@1.0.8": {
+    "licenses": "MIT",
+    "repository": "https://github.com/felixge/node-combined-stream",
+    "publisher": "Felix Geisendörfer",
+    "email": "felix@debuggable.com",
+    "url": "http://debuggable.com/",
+    "path": "/home/runner/mirror/node_modules/combined-stream",
+    "licenseFile": "/home/runner/mirror/node_modules/combined-stream/License"
+  },
+  "component-emitter@1.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/component/emitter",
+    "path": "/home/runner/mirror/node_modules/component-emitter",
+    "licenseFile": "/home/runner/mirror/node_modules/component-emitter/LICENSE"
+  },
+  "compressible@2.0.18": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/compressible",
+    "path": "/home/runner/mirror/node_modules/compressible",
+    "licenseFile": "/home/runner/mirror/node_modules/compressible/LICENSE"
+  },
+  "compression@1.7.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/expressjs/compression",
+    "path": "/home/runner/mirror/node_modules/compression",
+    "licenseFile": "/home/runner/mirror/node_modules/compression/LICENSE"
+  },
+  "content-disposition@0.5.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/content-disposition",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "/home/runner/mirror/node_modules/content-disposition",
+    "licenseFile": "/home/runner/mirror/node_modules/content-disposition/LICENSE"
+  },
+  "content-type@1.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/content-type",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "/home/runner/mirror/node_modules/content-type",
+    "licenseFile": "/home/runner/mirror/node_modules/content-type/LICENSE"
+  },
+  "cookie-signature@1.0.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/visionmedia/node-cookie-signature",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@learnboost.com",
+    "path": "/home/runner/mirror/node_modules/cookie-signature",
+    "licenseFile": "/home/runner/mirror/node_modules/cookie-signature/Readme.md"
+  },
+  "cookie@0.4.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/cookie",
+    "publisher": "Roman Shtylman",
+    "email": "shtylman@gmail.com",
+    "path": "/home/runner/mirror/node_modules/cookie",
+    "licenseFile": "/home/runner/mirror/node_modules/cookie/LICENSE"
+  },
+  "cookie@0.4.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/cookie",
+    "publisher": "Roman Shtylman",
+    "email": "shtylman@gmail.com",
+    "path": "/home/runner/mirror/node_modules/engine.io/node_modules/cookie",
+    "licenseFile": "/home/runner/mirror/node_modules/engine.io/node_modules/cookie/LICENSE"
+  },
+  "cors@2.8.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/expressjs/cors",
+    "publisher": "Troy Goode",
+    "email": "troygoode@gmail.com",
+    "url": "https://github.com/troygoode/",
+    "path": "/home/runner/mirror/node_modules/cors",
+    "licenseFile": "/home/runner/mirror/node_modules/cors/LICENSE"
+  },
+  "debug@2.6.9": {
+    "licenses": "MIT",
+    "repository": "https://github.com/visionmedia/debug",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "path": "/home/runner/mirror/node_modules/debug",
+    "licenseFile": "/home/runner/mirror/node_modules/debug/LICENSE"
+  },
+  "debug@4.3.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/visionmedia/debug",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "path": "/home/runner/mirror/node_modules/socket.io/node_modules/debug",
+    "licenseFile": "/home/runner/mirror/node_modules/socket.io/node_modules/debug/LICENSE"
+  },
+  "delayed-stream@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/felixge/node-delayed-stream",
+    "publisher": "Felix Geisendörfer",
+    "email": "felix@debuggable.com",
+    "url": "http://debuggable.com/",
+    "path": "/home/runner/mirror/node_modules/delayed-stream",
+    "licenseFile": "/home/runner/mirror/node_modules/delayed-stream/License"
+  },
+  "depd@1.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/dougwilson/nodejs-depd",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "/home/runner/mirror/node_modules/depd",
+    "licenseFile": "/home/runner/mirror/node_modules/depd/LICENSE"
+  },
+  "destroy@1.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/stream-utils/destroy",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "/home/runner/mirror/node_modules/destroy",
+    "licenseFile": "/home/runner/mirror/node_modules/destroy/LICENSE"
+  },
+  "discord.js@12.5.3": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/discordjs/discord.js",
+    "publisher": "Amish Shah",
+    "email": "amishshah.2k@gmail.com",
+    "path": "/home/runner/mirror/node_modules/discord.js",
+    "licenseFile": "/home/runner/mirror/node_modules/discord.js/LICENSE"
+  },
+  "ee-first@1.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jonathanong/ee-first",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "/home/runner/mirror/node_modules/ee-first",
+    "licenseFile": "/home/runner/mirror/node_modules/ee-first/LICENSE"
+  },
+  "encodeurl@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/pillarjs/encodeurl",
+    "path": "/home/runner/mirror/node_modules/encodeurl",
+    "licenseFile": "/home/runner/mirror/node_modules/encodeurl/LICENSE"
+  },
+  "engine.io-parser@4.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/socketio/engine.io-parser",
+    "path": "/home/runner/mirror/node_modules/engine.io-parser",
+    "licenseFile": "/home/runner/mirror/node_modules/engine.io-parser/LICENSE"
+  },
+  "engine.io@5.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/socketio/engine.io",
+    "publisher": "Guillermo Rauch",
+    "email": "guillermo@learnboost.com",
+    "path": "/home/runner/mirror/node_modules/engine.io",
+    "licenseFile": "/home/runner/mirror/node_modules/engine.io/LICENSE"
+  },
+  "escape-html@1.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/component/escape-html",
+    "path": "/home/runner/mirror/node_modules/escape-html",
+    "licenseFile": "/home/runner/mirror/node_modules/escape-html/LICENSE"
+  },
+  "etag@1.8.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/etag",
+    "path": "/home/runner/mirror/node_modules/etag",
+    "licenseFile": "/home/runner/mirror/node_modules/etag/LICENSE"
+  },
+  "event-target-shim@5.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mysticatea/event-target-shim",
+    "publisher": "Toru Nagashima",
+    "path": "/home/runner/mirror/node_modules/event-target-shim",
+    "licenseFile": "/home/runner/mirror/node_modules/event-target-shim/LICENSE"
+  },
+  "express@4.17.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/expressjs/express",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "path": "/home/runner/mirror/node_modules/express",
+    "licenseFile": "/home/runner/mirror/node_modules/express/LICENSE"
+  },
+  "finalhandler@1.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/pillarjs/finalhandler",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "/home/runner/mirror/node_modules/finalhandler",
+    "licenseFile": "/home/runner/mirror/node_modules/finalhandler/LICENSE"
+  },
+  "forwarded@0.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/forwarded",
+    "path": "/home/runner/mirror/node_modules/forwarded",
+    "licenseFile": "/home/runner/mirror/node_modules/forwarded/LICENSE"
+  },
+  "fresh@0.5.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/fresh",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "url": "http://tjholowaychuk.com",
+    "path": "/home/runner/mirror/node_modules/fresh",
+    "licenseFile": "/home/runner/mirror/node_modules/fresh/LICENSE"
+  },
+  "http-errors@1.7.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/http-errors",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "/home/runner/mirror/node_modules/http-errors",
+    "licenseFile": "/home/runner/mirror/node_modules/http-errors/LICENSE"
+  },
+  "iconv-lite@0.4.24": {
+    "licenses": "MIT",
+    "repository": "https://github.com/ashtuchkin/iconv-lite",
+    "publisher": "Alexander Shtuchkin",
+    "email": "ashtuchkin@gmail.com",
+    "path": "/home/runner/mirror/node_modules/iconv-lite",
+    "licenseFile": "/home/runner/mirror/node_modules/iconv-lite/LICENSE"
+  },
+  "inherits@2.0.3": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/inherits",
+    "path": "/home/runner/mirror/node_modules/inherits",
+    "licenseFile": "/home/runner/mirror/node_modules/inherits/LICENSE"
+  },
+  "ipaddr.js@1.9.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/whitequark/ipaddr.js",
+    "publisher": "whitequark",
+    "email": "whitequark@whitequark.org",
+    "path": "/home/runner/mirror/node_modules/ipaddr.js",
+    "licenseFile": "/home/runner/mirror/node_modules/ipaddr.js/LICENSE"
+  },
+  "media-typer@0.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/media-typer",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "/home/runner/mirror/node_modules/media-typer",
+    "licenseFile": "/home/runner/mirror/node_modules/media-typer/LICENSE"
+  },
+  "merge-descriptors@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/component/merge-descriptors",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "/home/runner/mirror/node_modules/merge-descriptors",
+    "licenseFile": "/home/runner/mirror/node_modules/merge-descriptors/LICENSE"
+  },
+  "methods@1.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/methods",
+    "path": "/home/runner/mirror/node_modules/methods",
+    "licenseFile": "/home/runner/mirror/node_modules/methods/LICENSE"
+  },
+  "mime-db@1.47.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/mime-db",
+    "path": "/home/runner/mirror/node_modules/mime-db",
+    "licenseFile": "/home/runner/mirror/node_modules/mime-db/LICENSE"
+  },
+  "mime-types@2.1.30": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/mime-types",
+    "path": "/home/runner/mirror/node_modules/mime-types",
+    "licenseFile": "/home/runner/mirror/node_modules/mime-types/LICENSE"
+  },
+  "mime@1.6.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/broofa/node-mime",
+    "publisher": "Robert Kieffer",
+    "email": "robert@broofa.com",
+    "url": "http://github.com/broofa",
+    "path": "/home/runner/mirror/node_modules/mime",
+    "licenseFile": "/home/runner/mirror/node_modules/mime/LICENSE"
+  },
+  "mirror@1.0.0": {
+    "licenses": "ISC",
+    "path": "/home/runner/mirror",
+    "licenseFile": "/home/runner/mirror/LICENSE.md"
+  },
+  "ms@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/zeit/ms",
+    "path": "/home/runner/mirror/node_modules/ms",
+    "licenseFile": "/home/runner/mirror/node_modules/ms/license.md"
+  },
+  "ms@2.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/zeit/ms",
+    "path": "/home/runner/mirror/node_modules/send/node_modules/ms",
+    "licenseFile": "/home/runner/mirror/node_modules/send/node_modules/ms/license.md"
+  },
+  "ms@2.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/zeit/ms",
+    "path": "/home/runner/mirror/node_modules/socket.io/node_modules/ms",
+    "licenseFile": "/home/runner/mirror/node_modules/socket.io/node_modules/ms/license.md"
+  },
+  "negotiator@0.6.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/negotiator",
+    "path": "/home/runner/mirror/node_modules/negotiator",
+    "licenseFile": "/home/runner/mirror/node_modules/negotiator/LICENSE"
+  },
+  "node-fetch@2.6.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/bitinn/node-fetch",
+    "publisher": "David Frank",
+    "path": "/home/runner/mirror/node_modules/node-fetch",
+    "licenseFile": "/home/runner/mirror/node_modules/node-fetch/LICENSE.md"
+  },
+  "object-assign@4.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/object-assign",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "/home/runner/mirror/node_modules/object-assign",
+    "licenseFile": "/home/runner/mirror/node_modules/object-assign/license"
+  },
+  "on-finished@2.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/on-finished",
+    "path": "/home/runner/mirror/node_modules/on-finished",
+    "licenseFile": "/home/runner/mirror/node_modules/on-finished/LICENSE"
+  },
+  "on-headers@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/on-headers",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "/home/runner/mirror/node_modules/on-headers",
+    "licenseFile": "/home/runner/mirror/node_modules/on-headers/LICENSE"
+  },
+  "parseurl@1.3.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/pillarjs/parseurl",
+    "path": "/home/runner/mirror/node_modules/parseurl",
+    "licenseFile": "/home/runner/mirror/node_modules/parseurl/LICENSE"
+  },
+  "path-to-regexp@0.1.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/component/path-to-regexp",
+    "path": "/home/runner/mirror/node_modules/path-to-regexp",
+    "licenseFile": "/home/runner/mirror/node_modules/path-to-regexp/LICENSE"
+  },
+  "prism-media@1.2.9": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/hydrabolt/prism-media",
+    "publisher": "Amish Shah",
+    "email": "amishshah.2k@gmail.com",
+    "path": "/home/runner/mirror/node_modules/prism-media",
+    "licenseFile": "/home/runner/mirror/node_modules/prism-media/LICENSE"
+  },
+  "proxy-addr@2.0.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/proxy-addr",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "/home/runner/mirror/node_modules/proxy-addr",
+    "licenseFile": "/home/runner/mirror/node_modules/proxy-addr/LICENSE"
+  },
+  "qs@6.7.0": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/ljharb/qs",
+    "path": "/home/runner/mirror/node_modules/qs",
+    "licenseFile": "/home/runner/mirror/node_modules/qs/LICENSE"
+  },
+  "range-parser@1.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/range-parser",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "url": "http://tjholowaychuk.com",
+    "path": "/home/runner/mirror/node_modules/range-parser",
+    "licenseFile": "/home/runner/mirror/node_modules/range-parser/LICENSE"
+  },
+  "raw-body@2.4.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/stream-utils/raw-body",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "/home/runner/mirror/node_modules/raw-body",
+    "licenseFile": "/home/runner/mirror/node_modules/raw-body/LICENSE"
+  },
+  "safe-buffer@5.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/feross/safe-buffer",
+    "publisher": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "http://feross.org",
+    "path": "/home/runner/mirror/node_modules/safe-buffer",
+    "licenseFile": "/home/runner/mirror/node_modules/safe-buffer/LICENSE"
+  },
+  "safer-buffer@2.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/ChALkeR/safer-buffer",
+    "publisher": "Nikita Skovoroda",
+    "email": "chalkerx@gmail.com",
+    "url": "https://github.com/ChALkeR",
+    "path": "/home/runner/mirror/node_modules/safer-buffer",
+    "licenseFile": "/home/runner/mirror/node_modules/safer-buffer/LICENSE"
+  },
+  "send@0.17.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/pillarjs/send",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "path": "/home/runner/mirror/node_modules/send",
+    "licenseFile": "/home/runner/mirror/node_modules/send/LICENSE"
+  },
+  "serve-static@1.14.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/expressjs/serve-static",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "/home/runner/mirror/node_modules/serve-static",
+    "licenseFile": "/home/runner/mirror/node_modules/serve-static/LICENSE"
+  },
+  "setimmediate@1.0.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/YuzuJS/setImmediate",
+    "publisher": "YuzuJS",
+    "path": "/home/runner/mirror/node_modules/setimmediate",
+    "licenseFile": "/home/runner/mirror/node_modules/setimmediate/LICENSE.txt"
+  },
+  "setprototypeof@1.1.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/wesleytodd/setprototypeof",
+    "publisher": "Wes Todd",
+    "path": "/home/runner/mirror/node_modules/setprototypeof",
+    "licenseFile": "/home/runner/mirror/node_modules/setprototypeof/LICENSE"
+  },
+  "socket.io-adapter@2.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/socketio/socket.io-adapter",
+    "path": "/home/runner/mirror/node_modules/socket.io-adapter",
+    "licenseFile": "/home/runner/mirror/node_modules/socket.io-adapter/LICENSE"
+  },
+  "socket.io-parser@4.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/socketio/socket.io-parser",
+    "path": "/home/runner/mirror/node_modules/socket.io-parser",
+    "licenseFile": "/home/runner/mirror/node_modules/socket.io-parser/LICENSE"
+  },
+  "socket.io@4.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/socketio/socket.io",
+    "path": "/home/runner/mirror/node_modules/socket.io",
+    "licenseFile": "/home/runner/mirror/node_modules/socket.io/LICENSE"
+  },
+  "statuses@1.5.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/statuses",
+    "path": "/home/runner/mirror/node_modules/statuses",
+    "licenseFile": "/home/runner/mirror/node_modules/statuses/LICENSE"
+  },
+  "toidentifier@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/component/toidentifier",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "/home/runner/mirror/node_modules/toidentifier",
+    "licenseFile": "/home/runner/mirror/node_modules/toidentifier/LICENSE"
+  },
+  "tweetnacl@1.0.3": {
+    "licenses": "Unlicense",
+    "repository": "https://github.com/dchest/tweetnacl-js",
+    "publisher": "TweetNaCl-js contributors",
+    "path": "/home/runner/mirror/node_modules/tweetnacl",
+    "licenseFile": "/home/runner/mirror/node_modules/tweetnacl/LICENSE"
+  },
+  "type-is@1.6.18": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/type-is",
+    "path": "/home/runner/mirror/node_modules/type-is",
+    "licenseFile": "/home/runner/mirror/node_modules/type-is/LICENSE"
+  },
+  "unpipe@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/stream-utils/unpipe",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "/home/runner/mirror/node_modules/unpipe",
+    "licenseFile": "/home/runner/mirror/node_modules/unpipe/LICENSE"
+  },
+  "utils-merge@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jaredhanson/utils-merge",
+    "publisher": "Jared Hanson",
+    "email": "jaredhanson@gmail.com",
+    "url": "http://www.jaredhanson.net/",
+    "path": "/home/runner/mirror/node_modules/utils-merge",
+    "licenseFile": "/home/runner/mirror/node_modules/utils-merge/LICENSE"
+  },
+  "vary@1.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jshttp/vary",
+    "publisher": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com",
+    "path": "/home/runner/mirror/node_modules/vary",
+    "licenseFile": "/home/runner/mirror/node_modules/vary/LICENSE"
+  },
+  "ws@7.4.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/websockets/ws",
+    "publisher": "Einar Otto Stangvik",
+    "email": "einaros@gmail.com",
+    "url": "http://2x.io",
+    "path": "/home/runner/mirror/node_modules/ws",
+    "licenseFile": "/home/runner/mirror/node_modules/ws/LICENSE"
+  }
+} 
