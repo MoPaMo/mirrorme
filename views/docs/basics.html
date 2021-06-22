@@ -72,12 +72,11 @@
       <br />
       <h5>The basic commands</h5>
       One thing all commands have in common: They are all prefixed with
-      <kbd>!m-</kbd>, as in <kbd>!m-start</kbd>, so they don't double up
-      with other bots! We've tried to make the use of commands as easy as
-      possible, for instance, if you wanted to start the server you would just
-      type <kbd>!m-start</kbd> and to stop it again, <kbd>!m-stop</kbd>.
-      Wait, did we just learn our first commands? Here's a short overview them
-      again:
+      <kbd>!m-</kbd>, as in <kbd>!m-start</kbd>, so they don't double up with
+      other bots! We've tried to make the use of commands as easy as possible,
+      for instance, if you wanted to start the server you would just type
+      <kbd>!m-start</kbd> and to stop it again, <kbd>!m-stop</kbd>. Wait, did we
+      just learn our first commands? Here's a short overview them again:
       <table class="table is-fullwidth is-hoverable">
         <thead>
           <tr>
@@ -108,7 +107,29 @@
           </tr>
         </tbody>
       </table>
-      If you run <kbd>!m-start</kbd>, MirrorMe DMs you so that the link is kept private. But what if you accidently delete that message or maybe another mod wants to know the URL? That's what <kbd>!m-url</kbd> was made for. You will get a DM with the URL again.
+      <p>
+        If you run <kbd>!m-start</kbd>, MirrorMe DMs you so that the link is
+        kept private. But what if you accidently delete that message or maybe
+        another mod wants to know the URL? That's what <kbd>!m-url</kbd> was
+        made for. You will get a DM with the URL again.
+      </p>
+      <p>
+        But isn't that kindof spooky, knowing that anyone could read your
+        messages everytime they want to? Well, no. We take privacy and security
+        very serious, so we've implemented a couple of features:
+      </p>
+      <ul>
+        <li>
+          <strong>Alerts </strong> Whenever someone joins the chat, you will get
+          a message telling you that he did and what OS he used (for example "Someone,  joined on the web page (!m-url). Device information:Firefox on Windows 7")
+
+        </li>
+        <li><strong>Passwords </strong>MirrorMe creates a random, 20 character long string to secure the webpage. The password is included in the link you get, so no one will suffer having to type all that... </li>
+        <li><strong>Reset</strong> When you think the link got somewhere he didn't should, you can just reset it using <kbd>!m-start</kbd> or completely stop the webpage (<kbd>!m-stop</kbd>)</li>
+      </ul>
+      And finally access restriction:
+      <h5>the <kbd>mirrorme_mod</kbd> role</h5>
+      Reading your chat can be problematic anyways sometimes though, so we implemented access restrictions. The majority of commands require a specific role, <code>mirrorme_mod</code> (Admin priviledges work as well), that MirrorMe creates when being added
     </article>
     <footer class="footer">
       <div class="content has-text-centered">
