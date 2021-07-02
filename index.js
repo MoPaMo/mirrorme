@@ -26,7 +26,7 @@ function getRnd(ind) {
   }
   return a;
 }
-const docpathes={"stage-vs-chat":"stage.html","stageVsChat":"stage.html","basics":"basics.html"}
+const docpathes={"stage-vs-chat":"stage.html","stageVsChat":"stage.html","stage-mode":"stage.html","basics":"basics.html","cheatsheet":"commands.html","getting-started":"basics.html"}
 // <express>
 app.use(compression());
 app.use(express.static("public"));
