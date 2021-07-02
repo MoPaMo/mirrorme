@@ -14,7 +14,7 @@ const Bowser = require("bowser");
 const Database = require("@replit/database");
 const db = new Database();
 const compression = require("compression");
-
+const twemoji = require("twemoji")
 const a = require("./htmltemplate");
 const page_texts = require("./page_texts");
 //discord
@@ -355,7 +355,7 @@ client.on("message", (message) => {
             //console.log(message.guild.id + "/" + response.pwd);
             io.to(message.guild.id + "/" + response.pwd).emit("msg", {
               author: message.author.username,
-              text: message.content,
+              text: twemoji.parse(message.content),
               id: message.author.id,
               img: message.author.avatarURL(),
               date: message.author.discriminator,
