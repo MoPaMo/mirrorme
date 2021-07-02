@@ -15,6 +15,7 @@
     "compression": "^1.7.4",
     "discord.js": "^12.5.3",
     "express": "^4.17.1",
-    "socket.io": "^4.0.1"
+    "socket.io": "^4.0.1",
+    "twemoji": "^13.1.0"
   }
 }
