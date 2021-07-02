@@ -26,6 +26,12 @@ function getRnd(ind) {
   }
   return a;
 }
+function escapeHTML(s) { 
+  return s.replace(/&/g, '&amp;')
+          .replace(/"/g, '&quot;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+}
 const docpathes={"stage-vs-chat":"stage.html","stageVsChat":"stage.html","stage-mode":"stage.html","basics":"basics.html","cheatsheet":"commands.html","getting-started":"basics.html"}
 // <express>
 app.use(compression());
@@ -355,7 +361,7 @@ client.on("message", (message) => {
             //console.log(message.guild.id + "/" + response.pwd);
             io.to(message.guild.id + "/" + response.pwd).emit("msg", {
               author: message.author.username,
-              text: twemoji.parse(message.content),
+              text: twemoji.parse(escapeHTML(message.content)),
               id: message.author.id,
               img: message.author.avatarURL(),
               date: message.author.discriminator,
