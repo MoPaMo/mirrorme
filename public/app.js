@@ -1,4 +1,4 @@
-//var socket = io();
+var socket = io();
 let vm = Vue.createApp({
   data() {
     return {
@@ -13,10 +13,10 @@ let vm = Vue.createApp({
     send_handle() {
       if (this.send_val.trim()) {
         console.log("Sending msg");
-        /*socket.emit("msg", this.send_val, function (aw) {
+       socket.emit("msg", this.send_val, function (aw) {
           console.log(aw);
           this.send_val = "";
-        });*/
+        });
         this.send_val = "";
       } else {
         console.log("Message was whitespace");
@@ -28,7 +28,7 @@ let vm = Vue.createApp({
   },
 }).mount("#main");
 
-/*socket.on("connect", (socket) => {
+socket.on("connect", (socket) => {
   console.log("connected to server");
   vm.loading = false;
 });
@@ -42,4 +42,3 @@ socket.on("error", (msg) => {
 socket.on("msg", (msg) => {
   vm.msgs.push(msg);
 });
-*/
