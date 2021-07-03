@@ -65,6 +65,12 @@ body {
   grid-gap: 1vw;
   grid-template-columns: 2.5rem auto;
 }
+.message .text .msg-text img {
+  height:1.2rem;
+}
+.message .text .msg-text img:only-child {
+  height:2.2rem;
+}
 .message .text .msg-info .msg-date {
   color: gray;
   font-size: 0.75rem;
