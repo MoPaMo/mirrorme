@@ -378,7 +378,7 @@ client.on("message", (message) => {
               author: message.author.username,
               text: twemoji.parse(escapeHTML(message.content), {
   folder: 'svg',
-  ext: '.svg'),
+  ext: '.svg'}),
               id: message.author.id,
               img: message.author.avatarURL(),
               date: message.author.discriminator,
