@@ -377,10 +377,8 @@ client.on("message", (message) => {
             io.to(message.guild.id + "/" + response.pwd).emit("msg", {
               author: message.author.username,
               text: twemoji.parse(escapeHTML(message.content), {
-                base: "https://cdnjs.cloudflare.com",
-                folder: "/ajax/libs/twemoji/12.0.4/svg/",
-                ext: ".svg",
-              }),
+  folder: 'svg',
+  ext: '.svg'),
               id: message.author.id,
               img: message.author.avatarURL(),
               date: message.author.discriminator,
