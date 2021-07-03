@@ -124,7 +124,8 @@ body {
   box-shadow: inset 0px 0px 0px black;
 }
 .share-section:hover{
-  box-shadow: inset 1px 1px 5px black ;
+  box-shadow: inset 1px 0px 5px black ;
+  padding-left:0.25rem;
 }
 @media only screen and (min-width: 641px) {
   .show-mobile {
