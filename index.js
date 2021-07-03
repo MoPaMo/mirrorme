@@ -33,6 +33,15 @@ function escapeHTML(s) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
 }
+function jumboMoji(s) {
+  let regex =
+  /^\s*<img class="emoji" draggable="false" alt="(.{2,10})" src="https:\/\/twemoji\.maxcdn\.com\/v\/13\.1\.0\/svg\/([\w-]+)\.svg">\s*$/g;
+  if (!regex.test(s)) return s; //abort if not single emoji
+  let subst = `<img class="emoji jumbo" draggable="false" alt="$1" src="https://twemoji.maxcdn.com/v/13.1.0/svg/$2.svg">`;
+
+  // The substituted value will be contained in the result variable
+  return s.replace(regex, subst);
+}
 const docpathes = {
   "stage-vs-chat": "stage.html",
   stageVsChat: "stage.html",
@@ -376,10 +385,12 @@ client.on("message", (message) => {
             //console.log(message.guild.id + "/" + response.pwd);
             io.to(message.guild.id + "/" + response.pwd).emit("msg", {
               author: message.author.username,
-              text: twemoji.parse(escapeHTML(message.content), {
-                folder: "svg",
-                ext: ".svg",
-              }),
+              text: jumboMoji(
+                twemoji.parse(escapeHTML(message.content), {
+                  folder: "svg",
+                  ext: ".svg",
+                })
+              ),
               id: message.author.id,
               img: message.author.avatarURL(),
               date: message.author.discriminator,
