@@ -68,6 +68,7 @@ body {
 .message .text .msg-info .msg-date {
   color: gray;
   font-size: 0.75rem;
+  margin-left: 0.5rem;
 }
 .message .text .msg-info .msg-author {
   color: #fff;

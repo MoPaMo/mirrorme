@@ -68,12 +68,13 @@
               :href="'https://discordapp.com/users/'+msg.id"
               target="_blank"
               title="Click to open discord (works only with friends)"
-              >{{msg.author}}
+              >{{msg.author}} 
             </a>
             <span class="msg-date"> {{msg.date}}</span>
           </div>
-        </div>
+        
         <div class="msg-text" v-html="msg.text"></div>
+      </div>
       </div>
     </main>
     <!-- /chat app-->
