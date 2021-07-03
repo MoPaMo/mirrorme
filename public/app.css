@@ -69,7 +69,7 @@ body {
 .message .text .msg-text img {
   height:1.2rem;
 }
-.message .text .msg-text img:only-child {
+.message .text .msg-text img.jumbo {
   height:2.2rem;
 }
 .message .text .msg-info .msg-date {
