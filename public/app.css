@@ -113,7 +113,9 @@ body {
     display: none;
   }
 }
-
+#aside{
+  word-break: break-all;
+}
 @media only screen and (max-width: 640px) {
   html,
   body {
@@ -130,7 +132,6 @@ body {
     overflow-y: hidden;
     overflow-x: scroll;
     padding-left: 0.5rem;
-    word-break: break-all;
   }
   .hide-mobile {
     display: none;
