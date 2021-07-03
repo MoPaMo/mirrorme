@@ -14,7 +14,7 @@ const Bowser = require("bowser");
 const Database = require("@replit/database");
 const db = new Database();
 const compression = require("compression");
-const twemoji = require("twemoji")
+const twemoji = require("twemoji");
 const a = require("./htmltemplate");
 const page_texts = require("./page_texts");
 //discord
@@ -26,13 +26,21 @@ function getRnd(ind) {
   }
   return a;
 }
-function escapeHTML(s) { 
-  return s.replace(/&/g, '&amp;')
-          .replace(/"/g, '&quot;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;');
+function escapeHTML(s) {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
-const docpathes={"stage-vs-chat":"stage.html","stageVsChat":"stage.html","stage-mode":"stage.html","basics":"basics.html","cheatsheet":"commands.html","getting-started":"basics.html"}
+const docpathes = {
+  "stage-vs-chat": "stage.html",
+  stageVsChat: "stage.html",
+  "stage-mode": "stage.html",
+  basics: "basics.html",
+  cheatsheet: "commands.html",
+  "getting-started": "basics.html",
+};
 // <express>
 app.use(compression());
 app.use(express.static("public"));
@@ -65,11 +73,11 @@ app.get("/code-of-conduct", (req, res) => {
 app.get("/code_of_conduct", (req, res) => {
   res.sendFile(`${__dirname}/views/code_of_conduct.html`);
 });
-app.get('/codeofconduct', function(req, res) {
-  res.redirect('/tos');
+app.get("/codeofconduct", function (req, res) {
+  res.redirect("/tos");
 });
-app.get('/gh', function(req, res) {
-res.redirect('https://github.com/MoPaMo/mirrorme');
+app.get("/gh", function (req, res) {
+  res.redirect("https://github.com/MoPaMo/mirrorme");
 });
 app.get("/finish", (req, res) => {
   res.sendFile(`${__dirname}/views/finish.html`);
@@ -87,7 +95,8 @@ app.get("/docs", (req, res) => {
   res.sendFile(`${__dirname}/views/docs/index.html`);
 });
 app.get("/docs/:name", (req, res) => {
-  let reallink=req.params.name in docpathes ?docpathes[req.params.name]:"404docs.html"
+  let reallink =
+    req.params.name in docpathes ? docpathes[req.params.name] : "404docs.html";
   res.sendFile(`${__dirname}/views/docs/${reallink}`);
 });
 // </express>
@@ -215,13 +224,15 @@ client.on("message", (message) => {
           created: new Date(),
           name: message.author.id,
         }).then(() => {
-          client.users.cache.get(message.author.id).send(
-            "Your link is: ||https://mirror.mopamo.repl.co/c/" +
-              message.guild.id +
-              "/" +
-              a +
-              " || . Others are now able to watch your chat through this link. Type `!m-stop` to prevent that"
-          );
+          client.users.cache
+            .get(message.author.id)
+            .send(
+              "Your link is: ||https://mirror.mopamo.repl.co/c/" +
+                message.guild.id +
+                "/" +
+                a +
+                " || . Others are now able to watch your chat through this link. Type `!m-stop` to prevent that"
+            );
           sentmsg.then((sentm) => {
             sentm.edit("Mirroring your server!");
           });
@@ -239,9 +250,11 @@ client.on("message", (message) => {
         db.get(message.guild.id).then((val) => {
           if (val != null && val.pwd != null) {
             //dm
-            client.users.cache.get(message.author.id).send(
-              `|| https://mirror.mopamo.repl.co/c/${message.guild.id}/${val.pwd} ||`
-            );
+            client.users.cache
+              .get(message.author.id)
+              .send(
+                `|| https://mirror.mopamo.repl.co/c/${message.guild.id}/${val.pwd} ||`
+              );
           }
         });
       } else if (message.content === "!m-stop") {
@@ -352,7 +365,9 @@ client.on("message", (message) => {
             }
           )
           .setTimestamp()
-          .setFooter(`Check out our site for better help: https://mirror.mopamo.repl.co/docs`);
+          .setFooter(
+            `Check out our site for better help: https://mirror.mopamo.repl.co/docs`
+          );
         message.channel.send(emb);
       } else {
         db.get(message.guild.id).then((response) => {
@@ -361,7 +376,11 @@ client.on("message", (message) => {
             //console.log(message.guild.id + "/" + response.pwd);
             io.to(message.guild.id + "/" + response.pwd).emit("msg", {
               author: message.author.username,
-              text: twemoji.parse(escapeHTML(message.content)),
+              text: twemoji.parse(escapeHTML(message.content), {
+                base: "https://cdnjs.cloudflare.com",
+                folder: "/ajax/libs/twemoji/12.0.4/svg/",
+                ext: ".svg",
+              }),
               id: message.author.id,
               img: message.author.avatarURL(),
               date: message.author.discriminator,
