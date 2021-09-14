@@ -61,7 +61,7 @@ app.get("/public/app.css", (req, res) => {
 });
 app.get("/add", (req, res) => {
   res.redirect(
-    "https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirror.mopamo.repl.co%2Ffinish"
+    "https://discord.com/oauth2/authorize?client_id=835079528770043925&scope=bot&permissions=335694913&response_type=code&redirect_uri=https%3A%2F%2Fmirrorme.repl.co%2Ffinish"
   );
 });
 app.get("/public/app.js", (req, res) => {
@@ -113,11 +113,11 @@ app.get("/docs/:name", (req, res) => {
 // <socketIO>
 
 io.on("connection", (socket) => {
-  const regex = /^https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
+  const regex = /^https:\/\/mirrorme\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
   let url = socket.handshake.headers.referer;
   //console.log(url);
   if (regex.test(socket.handshake.headers.referer)) {
-    let matches = /https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})/.exec(
+    let matches = /https:\/\/mirrorme\.repl\.co\/c\/(\d+)\/(.{20})/.exec(
       url
     );
     let server_id = matches[1];
@@ -164,12 +164,12 @@ io.on("connection", (socket) => {
   }
   socket.on("msg", (data) => {
     //console.log(data);
-    const regex = /^https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
+    const regex = /^https:\/\/mirrorme\.repl\.co\/c\/(\d+)\/(.{20})$/gm;
     let url = socket.handshake.headers.referer;
     //console.log(url);
     if (regex.test(socket.handshake.headers.referer)) {
       let matches =
-        /https:\/\/mirror\.mopamo\.repl\.co\/c\/(\d+)\/(.{20})/.exec(url);
+        /https:\/\/mirrorme\.repl\.co\/c\/(\d+)\/(.{20})/.exec(url);
       let server_id = matches[1];
       let server_pwd = matches[2];
 
@@ -236,7 +236,7 @@ client.on("message", (message) => {
           client.users.cache
             .get(message.author.id)
             .send(
-              "Your link is: ||https://mirror.mopamo.repl.co/c/" +
+              "Your link is: ||https://mirrorme.repl.co/c/" +
                 message.guild.id +
                 "/" +
                 a +
@@ -262,7 +262,7 @@ client.on("message", (message) => {
             client.users.cache
               .get(message.author.id)
               .send(
-                `|| https://mirror.mopamo.repl.co/c/${message.guild.id}/${val.pwd} ||`
+                `|| https://mirrorme.repl.co/c/${message.guild.id}/${val.pwd} ||`
               );
           }
         });
@@ -321,7 +321,7 @@ client.on("message", (message) => {
                 "If you miss me, you can invite me again: ",
                 `
 
-<https://mirror.mopamo.repl.co/add>`
+<https://mirrorme.repl.co/add>`
               )
               .setTimestamp()
               .setFooter(
@@ -336,7 +336,7 @@ client.on("message", (message) => {
             //console.log(role);
             if (role) {
               role.delete(
-                "Since mirrorme left, there's no use for this role. Invite again: https://mirror.mopamo.repl.co/add"
+                "Since mirrorme left, there's no use for this role. Invite again: https://mirrorme.repl.co/add"
               );
             }
             //console.log(role);
@@ -352,7 +352,7 @@ client.on("message", (message) => {
         const emb = new Discord.MessageEmbed()
           .setColor("#0099ff")
           .setTitle("MirrorMe Help")
-          .setURL(`https://mirror.mopamo.repl.co/docs`)
+          .setURL(`https://mirrorme.repl.co/docs`)
           .setAuthor(client.user.username, client.user.avatarURL())
           .addFields(
             {
@@ -375,7 +375,7 @@ client.on("message", (message) => {
           )
           .setTimestamp()
           .setFooter(
-            `Check out our site for better help: https://mirror.mopamo.repl.co/docs`
+            `Check out our site for better help: https://mirrorme.repl.co/docs`
           );
         message.channel.send(emb);
       } else {
@@ -410,7 +410,7 @@ client.on("message", (message) => {
     //DM
     if (!message.author.bot) {
       message.reply(
-        "I'm afraid mirrorme is only working on servers! You can add mirrorme to a server here: https://mirror.mopamo.repl.co"
+        "I'm afraid mirrorme is only working on servers! You can add mirrorme to a server here: https://mirrorme.repl.co"
       );
     }
   }
